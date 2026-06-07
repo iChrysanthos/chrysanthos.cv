@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chrysanthos Spyrou CV and portfolio website showcasing education, work experience, research, skills, certifications, achievements, and activities.">
+<meta name="theme-color" content="#08101a">
+<title>Chrysanthos Spyrou - CV</title>
+<style>
+  :root {
+    --bg: #08101a;
+    --bg-soft: #0d1724;
+    --card: rgba(16, 25, 38, 0.92);
+    --card-hover: #122033;
+    --border: rgba(138, 180, 255, 0.14);
+    --border-bright: rgba(104, 188, 255, 0.38);
+    --accent: #6fd3ff;
+    --accent-soft: rgba(111, 211, 255, 0.1);
+    --accent-glow: rgba(111, 211, 255, 0.26);
+    --violet: #9d7bff;
+    --violet-soft: rgba(157, 123, 255, 0.12);
+    --text: #edf3ff;
+    --muted: #96a2bb;
+    --muted-strong: #c0cada;
+    --white: #ffffff;
+    --font-sans: "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --font-mono: "Consolas", "SFMono-Regular", "Courier New", monospace;
+    --font-display: "Arial Narrow", "Franklin Gothic Medium", "Segoe UI", sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+  }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(111, 211, 255, 0.10), transparent 28%),
+      radial-gradient(circle at 80% 15%, rgba(157, 123, 255, 0.12), transparent 24%),
+      linear-gradient(180deg, #07101a 0%, #08111b 35%, #060c15 100%);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+  a { color: inherit; }
+  img, svg { display: block; max-width: 100%; }
+  ::selection { background: rgba(111, 211, 255, 0.28); color: var(--white); }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 16px;
+    top: -48px;
+    z-index: 1000;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #04111a;
+    font: 700 0.85rem/1 var(--font-sans);
+    text-decoration: none;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 16px;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #050b12; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--accent), var(--violet)); border-radius: 999px; }
+
+  .site-shell {
+    position: relative;
+    z-index: 1;
+  }
+
+  header, main, footer { position: relative; z-index: 1; }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px 48px;
+    background: rgba(7, 13, 22, 0.84);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .nav-links a {
+    color: var(--muted-strong);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-bright);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(10, 19, 31, 0.9);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+  .lang-btn {
+    padding: 7px 13px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--muted-strong);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    font-family: var(--font-mono);
+  }
+  .lang-btn.active {
+    background: var(--accent);
+    color: #07131f;
+  }
+  .lang-btn:hover:not(.active) { color: var(--white); }
+  .lang-sep { width: 1px; align-self: stretch; background: var(--border-bright); }
+
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(111, 211, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(111, 211, 255, 0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 75% 60% at 50% 50%, black 40%, transparent 100%);
+  }
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+  }
+  .orb1 {
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(111, 211, 255, 0.12) 0%, transparent 72%);
+    top: -120px;
+    right: -120px;
+    animation: float1 10s ease-in-out infinite;
+  }
+  .orb2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(157, 123, 255, 0.14) 0%, transparent 72%);
+    bottom: -110px;
+    left: -110px;
+    animation: float2 12s ease-in-out infinite;
+  }
+  @keyframes float1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-28px, 24px); } }
+  @keyframes float2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(24px, -20px); } }
+
+  .hero-content {
+    max-width: 920px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 1px solid var(--border-bright);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 28px;
+    background: var(--accent-soft);
+    animation: fadeInUp 0.6s ease both;
+  }
+  .hero-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  .hero-name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 0.92;
+    letter-spacing: 3px;
+    color: var(--white);
+    animation: fadeInUp 0.6s ease 0.1s both;
+  }
+  .hero-name span { color: var(--accent); }
+  .hero-subtitle {
+    margin: 20px 0 36px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--muted-strong);
+    animation: fadeInUp 0.6s ease 0.2s both;
+  }
+  .hero-cursor { color: var(--accent); animation: blink 1s step-end infinite; }
+  .hero-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    margin-bottom: 24px;
+    animation: fadeInUp 0.6s ease 0.3s both;
+  }
+  .hero-desc {
+    max-width: 570px;
+    font-size: 1.05rem;
+    color: var(--muted-strong);
+    line-height: 1.8;
+    animation: fadeInUp 0.6s ease 0.35s both;
+  }
+  .hero-desc strong { color: var(--text); font-weight: 700; }
+  .hero-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 40px;
+    animation: fadeInUp 0.6s ease 0.45s both;
+  }
+  .contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--muted-strong);
+    font-size: 0.82rem;
+    background: var(--card);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+    text-decoration: none;
+    min-height: 44px;
+  }
+  .contact-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+    transform: translateY(-2px);
+  }
+  .contact-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .contact-pill span { white-space: nowrap; }
+  .contact-pill--static { cursor: default; }
+  .contact-pill--static:hover { transform: none; }
+
+  .section-wrap {
+    padding: 96px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 52px;
+  }
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    opacity: 0.8;
+    letter-spacing: 1.5px;
+  }
+  .section-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    color: var(--white);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-bright), transparent);
+    margin-left: 8px;
+  }
+  .section-divider {
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--violet) 60%, transparent 100%);
+  }
+  .timeline-item,
+  .card,
+  .skill-item,
+  .cert-item,
+  .achievement-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 28px 32px;
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  .timeline-item.visible { animation: slideInX 0.5s ease forwards; }
+  .timeline-item:hover {
+    border-color: var(--border-bright);
+    background: var(--card-hover);
+    transform: translateX(4px);
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -39px;
+    top: 32px;
+    width: 14px;
+    height: 14px;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+  .timeline-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .timeline-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .timeline-sub {
+    font-size: 0.85rem;
+    color: var(--muted-strong);
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    padding: 28px;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .card.visible { animation: fadeUp 0.5s ease forwards; }
+  .card:hover {
+    border-color: var(--border-bright);
+    background: var(--card-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+  }
+  .card-icon { font-size: 1.5rem; margin-bottom: 14px; display: block; }
+  .card-period {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .card-body {
+    font-size: 0.84rem;
+    color: var(--muted-strong);
+    line-height: 1.68;
+  }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    opacity: 0.88;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .card-link:hover { opacity: 1; transform: translateX(2px); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .skill-item {
+    padding: 18px 22px;
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  .skill-item.visible { animation: popIn 0.4s ease forwards; }
+  .skill-item:hover {
+    border-color: var(--border-bright);
+    background: var(--card-hover);
+  }
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .skill-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .skill-level {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .skill-bar {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--violet));
+    width: 0;
+    transition: width 1s ease 0.3s;
+  }
+
+  .tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .tag {
+    padding: 6px 14px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border-bright);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .tag.purple {
+    background: var(--violet-soft);
+    border-color: rgba(157, 123, 255, 0.36);
+    color: #c7b2ff;
+  }
+
+  .certs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 22px;
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  .cert-item.visible { animation: slideInX 0.4s ease forwards; }
+  .cert-item:hover {
+    border-color: var(--border-bright);
+    background: var(--card-hover);
+    transform: translateX(4px);
+  }
+  .cert-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
+  .cert-name {
+    font-size: 0.875rem;
+    color: var(--text);
+    flex: 1;
+    font-weight: 600;
+  }
+  .cert-year {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .achievement-card {
+    padding: 28px 22px;
+    text-align: center;
+    opacity: 0;
+  }
+  .achievement-card.visible { animation: fadeUp 0.5s ease forwards; }
+  .achievement-card:hover {
+    border-color: var(--border-bright);
+    background: var(--card-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+  .achievement-medal { font-size: 2.5rem; margin-bottom: 14px; display: block; }
+  .achievement-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .achievement-year {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+  }
+
+  .activities-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .activity-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    color: var(--muted-strong);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+  }
+  .activity-chip:hover {
+    border-color: var(--border-bright);
+    color: var(--text);
+    background: var(--card-hover);
+    transform: translateY(-2px);
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 48px 52px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+  }
+  footer span { color: var(--accent); }
+
+  @keyframes slideInX { to { opacity: 1; transform: translateX(0); } }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  @keyframes popIn { to { opacity: 1; transform: scale(1); } }
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+  [data-i18n], [data-i18n-html] { transition: opacity 0.18s ease; }
+  .lang-fade { opacity: 0; }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 20px; }
+    .nav-links { gap: 16px; }
+    .section-wrap { padding: 84px 20px; }
+    #hero { padding: 100px 20px 60px; }
+  }
+  @media (max-width: 768px) {
+    nav {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .nav-links {
+      justify-content: flex-start;
+      width: 100%;
+      gap: 14px;
+    }
+    .nav-links li.nav-link-item { display: none; }
+    .section-title { font-size: 2.25rem; }
+    .section-label { margin-bottom: 40px; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .achievements-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-name { letter-spacing: 2px; }
+    .hero-contacts { flex-direction: column; align-items: flex-start; }
+    .contact-pill { width: 100%; justify-content: flex-start; }
+    .timeline { padding-left: 24px; }
+    .timeline::before { left: 5px; }
+    .timeline-dot { left: -31px; }
+    .cert-item { align-items: flex-start; flex-direction: column; gap: 8px; }
+  }
+  @media (max-width: 540px) {
+    .achievements-grid { grid-template-columns: 1fr; }
+    .hero-name { font-size: clamp(3.1rem, 18vw, 5rem); }
+    .section-title { font-size: 1.9rem; letter-spacing: 2px; }
+    .hero-desc { font-size: 1rem; }
+    .skill-header { align-items: flex-start; flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="site-shell">
+<header>
+  <nav aria-label="Primary navigation">
+    <div class="nav-logo">C.S</div>
+    <ul class="nav-links">
+      <li class="nav-link-item"><a href="#education" data-i18n="nav_education">Education</a></li>
+      <li class="nav-link-item"><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+      <li class="nav-link-item"><a href="#research" data-i18n="nav_research">Research</a></li>
+      <li class="nav-link-item"><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+      <li class="nav-link-item"><a href="#more" data-i18n="nav_more">More</a></li>
+      <li>
+        <div class="lang-toggle" role="group" aria-label="Language switcher">
+          <button class="lang-btn active" id="btn-en" type="button" aria-pressed="true" onclick="setLang('en')">EN</button>
+          <div class="lang-sep" aria-hidden="true"></div>
+          <button class="lang-btn" id="btn-el" type="button" aria-pressed="false" onclick="setLang('el')">ΕΛ</button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <section id="hero" aria-labelledby="hero-name">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-orb orb1" aria-hidden="true"></div>
+    <div class="hero-orb orb2" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1 class="hero-name" id="hero-name">CHRYSANTHOS<br><span>SPYROU</span></h1>
+      <p class="hero-subtitle">&gt; <span id="typed" aria-live="polite"></span><span class="hero-cursor" aria-hidden="true">|</span></p>
+      <div class="hero-divider" aria-hidden="true"></div>
+      <p class="hero-desc" data-i18n-html="hero_desc_html">
+        Graduate student in <strong>AI & Data Engineering</strong> at CUT.
+        Passionate about artificial intelligence, data analysis and innovative applications.
+        Based in <strong>Limassol, Cyprus</strong>.
+      </p>
+      <div class="hero-contacts" aria-label="Contact details">
+        <a class="contact-pill" href="tel:97639826" aria-label="Call Chrysanthos Spyrou">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          97 639826
+        </a>
+        <a class="contact-pill" href="mailto:chrysanthosgr@gmail.com" aria-label="Send email to Chrysanthos Spyrou">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          chrysanthosgr@gmail.com
+        </a>
+        <span class="contact-pill contact-pill--static" aria-label="Location">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span data-i18n="hero_location">Limassol, Cyprus</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section-wrap" id="education" aria-labelledby="education-title">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <h2 class="section-title" id="education-title" data-i18n="sec_education">EDUCATION</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+    <div class="timeline">
+      <article class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-date" data-i18n="edu1_date">2025 - Present</div>
+        <div class="timeline-title" data-i18n="edu1_title">MSc: Artificial Intelligence (AI) & Data Engineering</div>
+        <div class="timeline-sub" data-i18n="edu1_sub">Cyprus University of Technology (CUT) · Limassol</div>
+        <div class="tags-cloud" style="margin-top:12px;">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Data Engineering</span>
+          <span class="tag">Multi-Agent Systems</span>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-date" data-i18n="edu2_date">2021 - 2025</div>
+        <div class="timeline-title" data-i18n="edu2_title">BSc: Communication and Internet Studies - Information Technology</div>
+        <div class="timeline-sub" data-i18n="edu2_sub">Cyprus University of Technology (CUT) · Limassol</div>
+        <div class="tags-cloud" style="margin-top:12px;">
+          <span class="tag">Web Development</span>
+          <span class="tag">Data Analysis</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Computer Vision</span>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <div class="timeline-dot" style="border-color:var(--violet);box-shadow:0 0 12px rgba(157,123,255,0.4);" aria-hidden="true"></div>
+        <div class="timeline-date" style="color:var(--violet);" data-i18n="edu3_date">2018 - 2021</div>
+        <div class="timeline-title" data-i18n="edu3_title">High School Diploma: Hairdressing Combination</div>
+        <div class="timeline-sub" data-i18n="edu3_sub">2nd Technical School, Limassol</div>
+      </article>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section-wrap" id="experience" aria-labelledby="experience-title">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <h2 class="section-title" id="experience-title" data-i18n="sec_experience">WORK EXPERIENCE</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+    <div class="cards-grid">
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">🔬</span>
+        <div class="card-period" data-i18n="exp1_date">OCT 2024 - DEC 2024</div>
+        <div class="card-title" data-i18n="exp1_title">Researcher - "The Neighbourhood of Ciné-Volos"</div>
+        <div class="card-body" data-i18n="exp1_body">Department of Communication and Internet Studies, CUT. Website development and dissemination of research results.</div>
+        <a class="card-link" href="https://cinevolosproject.cut.ac.cy/" target="_blank" rel="noopener noreferrer">🔗 cinevolosproject.cut.ac.cy →</a>
+      </article>
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">💻</span>
+        <div class="card-period" data-i18n="exp2_date">JUN 2024 - AUG 2024</div>
+        <div class="card-title" data-i18n="exp2_title">Web Developer - FOSETICO ENTERPRISES LTD</div>
+        <div class="card-body" data-i18n="exp2_body">Creation and programming of a website. Full design, development and delivery of a complete web project.</div>
+        <div class="tags-cloud" style="margin-top:14px;">
+          <span class="tag purple">WordPress</span>
+          <span class="tag purple">HTML / CSS</span>
+        </div>
+      </article>
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">🌿</span>
+        <div class="card-period" data-i18n="exp3_date">JUN 2022 - JUL 2022</div>
+        <div class="card-title" data-i18n="exp3_title">Assistant Supervisor - Synthetic Grass</div>
+        <div class="card-body" data-i18n="exp3_body">Customer service, garden landscaping, tree and flower planting, gravel work and artificial grass installation.</div>
+      </article>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section-wrap" id="research" aria-labelledby="research-title">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <h2 class="section-title" id="research-title" data-i18n="sec_research">RESEARCH</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+    <div class="cards-grid">
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">🤖</span>
+        <div class="card-period" data-i18n="res1_date">MAY 2026 - Present · MSc Thesis</div>
+        <div class="card-title" data-i18n="res1_title">Config-only Multi-Agent Crypto Market Making with CrewAI & Ollama</div>
+        <div class="card-body" data-i18n="res1_body">Supervisor: Dr. Sotirios Chatzis. Agent architecture design, experiments with liquidity/risk profiles and performance evaluation with PnL, inventory risk & execution quality.</div>
+        <div class="tags-cloud" style="margin-top:14px;">
+          <span class="tag">CrewAI</span><span class="tag">Ollama</span>
+          <span class="tag">Crypto</span><span class="tag">Multi-Agent</span>
+        </div>
+      </article>
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">📱</span>
+        <div class="card-period" data-i18n="res2_date">SEP 2024 - MAY 2025 · BSc Thesis</div>
+        <div class="card-title" data-i18n="res2_title">Tech Brands on Instagram: A Multimodal Computational Approach for Content Analysis</div>
+        <div class="card-body" data-i18n="res2_body">Image & text analysis of the top 20 technology brands using sentiment analysis, emotional analysis and topic modeling on multimodal data.</div>
+        <div class="tags-cloud" style="margin-top:14px;">
+          <span class="tag">NLP</span><span class="tag">Computer Vision</span>
+          <span class="tag">Sentiment Analysis</span>
+        </div>
+      </article>
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">🎬</span>
+        <div class="card-period" data-i18n="res3_date">OCT 2024 - DEC 2024 · Research Project</div>
+        <div class="card-title" data-i18n="res3_title">The Neighbourhood of Ciné-Volos</div>
+        <div class="card-body" data-i18n="res3_body">Role: Research Associate. Website development for presentation and dissemination of research results. Digital content management.</div>
+        <a class="card-link" href="https://cinevolosproject.cut.ac.cy/" target="_blank" rel="noopener noreferrer" data-i18n="res3_link">🔗 View the project →</a>
+      </article>
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">📊</span>
+        <div class="card-period" data-i18n="res4_date">Spring 2024 · Academic Research</div>
+        <div class="card-title" data-i18n="res4_title">Differential Behavior of Male & Female Users on Social Media - MEPs</div>
+        <div class="card-body" data-i18n="res4_body">Development of Python software for big data analysis. Exploration of gender differences in MEPs' social media post content.</div>
+        <div class="tags-cloud" style="margin-top:14px;">
+          <span class="tag">Python</span><span class="tag">Big Data</span>
+          <span class="tag">Social Media</span>
+        </div>
+      </article>
+      <article class="card">
+        <span class="card-icon" aria-hidden="true">🎥</span>
+        <div class="card-period" data-i18n="res5_date">SEP 2023 - DEC 2023 · Documentary</div>
+        <div class="card-title" data-i18n="res5_title">Limassol Carnival</div>
+        <div class="card-body" data-i18n="res5_body">Director, Screenwriter, Producer & Editor. History of the Carnival through interviews and archives from the Pattichio Historical Archive of Limassol.</div>
+      </article>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section-wrap" id="skills" aria-labelledby="skills-title">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <h2 class="section-title" id="skills-title" data-i18n="sec_skills">SKILLS</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+    <div class="skills-grid">
+      <article class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name" data-i18n="skill1">🐍 Python Programming</span>
+          <span class="skill-level" data-i18n="level_excellent">Excellent</span>
+        </div>
+        <div class="skill-bar" aria-hidden="true"><div class="skill-fill" data-width="95"></div></div>
+      </article>
+      <article class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name" data-i18n="skill2">🤖 Artificial Intelligence / AI</span>
+          <span class="skill-level" data-i18n="level_excellent">Excellent</span>
+        </div>
+        <div class="skill-bar" aria-hidden="true"><div class="skill-fill" data-width="92"></div></div>
+      </article>
+      <article class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name" data-i18n="skill3">📊 Data Analysis</span>
+          <span class="skill-level" data-i18n="level_excellent">Excellent</span>
+        </div>
+        <div class="skill-bar" aria-hidden="true"><div class="skill-fill" data-width="90"></div></div>
+      </article>
+      <article class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name" data-i18n="skill4">💼 Microsoft Office</span>
+          <span class="skill-level" data-i18n="level_excellent">Excellent</span>
+        </div>
+        <div class="skill-bar" aria-hidden="true"><div class="skill-fill" data-width="95"></div></div>
+      </article>
+      <article class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name" data-i18n="skill5">🌐 Web Dev (HTML/CSS/JS)</span>
+          <span class="skill-level" data-i18n="level_good">Good</span>
+        </div>
+        <div class="skill-bar" aria-hidden="true"><div class="skill-fill" data-width="70"></div></div>
+      </article>
+      <article class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name" data-i18n="skill6">🔧 WordPress</span>
+          <span class="skill-level" data-i18n="level_good">Good</span>
+        </div>
+        <div class="skill-bar" aria-hidden="true"><div class="skill-fill" data-width="70"></div></div>
+      </article>
+      <article class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name" data-i18n="skill7">📈 SPSS</span>
+          <span class="skill-level" data-i18n="level_intermediate">Intermediate</span>
+        </div>
+        <div class="skill-bar" aria-hidden="true"><div class="skill-fill" data-width="50"></div></div>
+      </article>
+      <article class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name" data-i18n="skill8">🎨 Photoshop</span>
+          <span class="skill-level" data-i18n="level_intermediate">Intermediate</span>
+        </div>
+        <div class="skill-bar" aria-hidden="true"><div class="skill-fill" data-width="50"></div></div>
+      </article>
+    </div>
+    <div style="margin-top:44px;">
+      <p class="section-num" style="letter-spacing:1.5px;font-size:0.75rem;margin-bottom:16px;" data-i18n="skill_lang_title">LANGUAGES</p>
+      <div class="tags-cloud">
+        <span class="tag" data-i18n="skill_greek">Greek - Native</span>
+        <span class="tag purple" data-i18n="skill_english">English - Intermediate</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section-wrap" id="more" aria-labelledby="certifications-title">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <h2 class="section-title" id="certifications-title" data-i18n="sec_certs">CERTIFICATIONS</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+    <div class="certs-list">
+      <article class="cert-item">
+        <div class="cert-dot" aria-hidden="true"></div>
+        <span class="cert-name" data-i18n="cert1">Practical Workshop - VERITAS-AI Project | EmpowerPath (EU Co-funded)</span>
+        <span class="cert-year">2026</span>
+      </article>
+      <article class="cert-item">
+        <div class="cert-dot" aria-hidden="true"></div>
+        <span class="cert-name" data-i18n="cert2">Researcher - CUT</span>
+        <span class="cert-year">2024</span>
+      </article>
+      <article class="cert-item">
+        <div class="cert-dot" style="background:var(--muted);box-shadow:none;" aria-hidden="true"></div>
+        <span class="cert-name" data-i18n="cert3">ECDL - Presentation, Word Processing, Spreadsheets, Image Editing</span>
+        <span class="cert-year">2021-22</span>
+      </article>
+      <article class="cert-item">
+        <div class="cert-dot" style="background:#a78bfa;box-shadow:0 0 8px rgba(157,123,255,0.4);" aria-hidden="true"></div>
+        <span class="cert-name" data-i18n="cert4">Krav Maga - Practitioner, P2, P3, P4</span>
+        <span class="cert-year">2024-25</span>
+      </article>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section-wrap" aria-labelledby="achievements-title">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <h2 class="section-title" id="achievements-title" data-i18n="sec_achievements">ACHIEVEMENTS</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+    <div class="achievements-grid">
+      <article class="achievement-card">
+        <span class="achievement-medal" aria-hidden="true">🥇</span>
+        <div class="achievement-title" data-i18n="ach1_title">Bowling - Gold Medal</div>
+        <div class="achievement-year" data-i18n="ach1_year">2014 - 1st Place</div>
+      </article>
+      <article class="achievement-card">
+        <span class="achievement-medal" aria-hidden="true">🤸</span>
+        <div class="achievement-title" data-i18n="ach2_title">Olympic Gymnastics - 3 Medals</div>
+        <div class="achievement-year" data-i18n="ach2_year">2012 - 2014</div>
+      </article>
+      <article class="achievement-card">
+        <span class="achievement-medal" aria-hidden="true">🏆</span>
+        <div class="achievement-title" data-i18n="ach3_title">Olympic Gymnastics - 3 Cups</div>
+        <div class="achievement-year" data-i18n="ach3_year">2015 - 2018</div>
+      </article>
+      <article class="achievement-card">
+        <span class="achievement-medal" aria-hidden="true">🏅</span>
+        <div class="achievement-title" data-i18n="ach4_title">XM Marathon - Medal</div>
+        <div class="achievement-year" data-i18n="ach4_year">2026</div>
+      </article>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section-wrap" aria-labelledby="activities-title">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <h2 class="section-title" id="activities-title" data-i18n="sec_activities">ACTIVITIES</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+    <div class="activities-row">
+      <div class="activity-chip" data-i18n="act1">🏊 Swimming</div>
+      <div class="activity-chip" data-i18n="act2">🤸 Olympic Gymnastics</div>
+      <div class="activity-chip" data-i18n="act3">🥊 MMA</div>
+      <div class="activity-chip" data-i18n="act4">🦶 Kick-Boxing</div>
+      <div class="activity-chip" data-i18n="act5">🥋 Krav Maga</div>
+      <div class="activity-chip" data-i18n="act6">📻 Radio Producer</div>
+      <div class="activity-chip" data-i18n="act7">🚗 Driving License</div>
+      <div class="activity-chip" data-i18n="act8">🎲 Board Games Club (CUT)</div>
+      <div class="activity-chip" data-i18n="act9">💡 New Technologies Club (CUT)</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><span data-i18n="footer_text">© 2026 Chrysanthos Spyrou · Limassol, Cyprus</span> · <span>chrysanthosgr@gmail.com</span></p>
+</footer>
+</div>
+
+<script>
+const T = {
+  en: {
+    nav_education: "Education",
+    nav_experience: "Experience",
+    nav_research: "Research",
+    nav_skills: "Skills",
+    nav_more: "More",
+    hero_location: "Limassol, Cyprus",
+    hero_desc_html: 'Graduate student in <strong>AI & Data Engineering</strong> at CUT. Passionate about artificial intelligence, data analysis and innovative applications. Based in <strong>Limassol, Cyprus</strong>.',
+    hero_typed: ["AI & Data Engineering MSc", "Python Developer", "Researcher @ CUT", "Multi-Agent Systems"],
+    sec_education: "EDUCATION",
+    sec_experience: "WORK EXPERIENCE",
+    sec_research: "RESEARCH",
+    sec_skills: "SKILLS",
+    sec_certs: "CERTIFICATIONS",
+    sec_achievements: "ACHIEVEMENTS",
+    sec_activities: "ACTIVITIES",
+    edu1_date: "2025 - Present",
+    edu1_title: "MSc: Artificial Intelligence (AI) & Data Engineering",
+    edu1_sub: "Cyprus University of Technology (CUT) · Limassol",
+    edu2_date: "2021 - 2025",
+    edu2_title: "BSc: Communication and Internet Studies - Information Technology",
+    edu2_sub: "Cyprus University of Technology (CUT) · Limassol",
+    edu3_date: "2018 - 2021",
+    edu3_title: "High School Diploma: Hairdressing Combination",
+    edu3_sub: "2nd Technical School, Limassol",
+    exp1_date: "OCT 2024 - DEC 2024",
+    exp1_title: 'Researcher - "The Neighbourhood of Ciné-Volos"',
+    exp1_body: "Department of Communication and Internet Studies, CUT. Website development and dissemination of research results.",
+    exp2_date: "JUN 2024 - AUG 2024",
+    exp2_title: "Web Developer - FOSETICO ENTERPRISES LTD",
+    exp2_body: "Creation and programming of a website. Full design, development and delivery of a complete web project.",
+    exp3_date: "JUN 2022 - JUL 2022",
+    exp3_title: "Assistant Supervisor - Synthetic Grass",
+    exp3_body: "Customer service, garden landscaping, tree and flower planting, gravel work and artificial grass installation.",
+    res1_date: "MAY 2026 - Present · MSc Thesis",
+    res1_title: "Config-only Multi-Agent Crypto Market Making with CrewAI & Ollama",
+    res1_body: "Supervisor: Dr. Sotirios Chatzis. Agent architecture design, experiments with liquidity/risk profiles and performance evaluation with PnL, inventory risk & execution quality.",
+    res2_date: "SEP 2024 - MAY 2025 · BSc Thesis",
+    res2_title: "Tech Brands on Instagram: A Multimodal Computational Approach for Content Analysis",
+    res2_body: "Image & text analysis of the top 20 technology brands using sentiment analysis, emotional analysis and topic modeling on multimodal data.",
+    res3_date: "OCT 2024 - DEC 2024 · Research Project",
+    res3_title: "The Neighbourhood of Ciné-Volos",
+    res3_body: "Role: Research Associate. Website development for presentation and dissemination of research results. Digital content management.",
+    res3_link: "🔗 View the project →",
+    res4_date: "Spring 2024 · Academic Research",
+    res4_title: "Differential Behavior of Male & Female Users on Social Media - MEPs",
+    res4_body: "Development of Python software for big data analysis. Exploration of gender differences in MEPs' social media post content.",
+    res5_date: "SEP 2023 - DEC 2023 · Documentary",
+    res5_title: "Limassol Carnival",
+    res5_body: "Director, Screenwriter, Producer & Editor. History of the Carnival through interviews and archives from the Pattichio Historical Archive of Limassol.",
+    skill_lang_title: "LANGUAGES",
+    skill_greek: "Greek - Native",
+    skill_english: "English - Intermediate",
+    skill1: "🐍 Python Programming",
+    skill2: "🤖 Artificial Intelligence / AI",
+    skill3: "📊 Data Analysis",
+    skill4: "💼 Microsoft Office",
+    skill5: "🌐 Web Dev (HTML/CSS/JS)",
+    skill6: "🔧 WordPress",
+    skill7: "📈 SPSS",
+    skill8: "🎨 Photoshop",
+    level_excellent: "Excellent",
+    level_good: "Good",
+    level_intermediate: "Intermediate",
+    cert1: "Practical Workshop - VERITAS-AI Project | EmpowerPath (EU Co-funded)",
+    cert2: "Researcher - CUT",
+    cert3: "ECDL - Presentation, Word Processing, Spreadsheets, Image Editing",
+    cert4: "Krav Maga - Practitioner, P2, P3, P4",
+    ach1_title: "Bowling - Gold Medal",
+    ach1_year: "2014 - 1st Place",
+    ach2_title: "Olympic Gymnastics - 3 Medals",
+    ach2_year: "2012 - 2014",
+    ach3_title: "Olympic Gymnastics - 3 Cups",
+    ach3_year: "2015 - 2018",
+    ach4_title: "XM Marathon - Medal",
+    ach4_year: "2026",
+    act1: "🏊 Swimming",
+    act2: "🤸 Olympic Gymnastics",
+    act3: "🥊 MMA",
+    act4: "🦶 Kick-Boxing",
+    act5: "🥋 Krav Maga",
+    act6: "📻 Radio Producer",
+    act7: "🚗 Driving License",
+    act8: "🎲 Board Games Club (CUT)",
+    act9: "💡 New Technologies Club (CUT)",
+    footer_text: "© 2026 Chrysanthos Spyrou · Limassol, Cyprus"
+  },
+  el: {
+    nav_education: "Εκπαίδευση",
+    nav_experience: "Εμπειρία",
+    nav_research: "Έρευνα",
+    nav_skills: "Δεξιότητες",
+    nav_more: "Επιπλέον",
+    hero_location: "Λεμεσός, Κύπρος",
+    hero_desc_html: 'Μεταπτυχιακός φοιτητής στο <strong>AI & Μηχανική Δεδομένων</strong> στο ΤΕΠΑΚ. Πάθος για τεχνητή νοημοσύνη, ανάλυση δεδομένων και καινοτόμες εφαρμογές. Βασισμένος στη <strong>Λεμεσό, Κύπρος</strong>.',
+    hero_typed: ["MSc Τεχνητή Νοημοσύνη", "Python Developer", "Ερευνητής @ ΤΕΠΑΚ", "Multi-Agent Systems"],
+    sec_education: "ΕΚΠΑΙΔΕΥΣΗ",
+    sec_experience: "ΕΡΓΑΣΙΑΚΗ ΕΜΠΕΙΡΙΑ",
+    sec_research: "ΕΡΕΥΝΕΣ",
+    sec_skills: "ΔΕΞΙΟΤΗΤΕΣ",
+    sec_certs: "ΠΙΣΤΟΠΟΙΗΤΙΚΑ",
+    sec_achievements: "ΕΠΙΤΕΥΓΜΑΤΑ",
+    sec_activities: "ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ",
+    edu1_date: "2025 - Σήμερα",
+    edu1_title: "Μεταπτυχιακό: Τεχνητή Νοημοσύνη (AI) & Μηχανική Δεδομένων",
+    edu1_sub: "Τεχνολογικό Πανεπιστήμιο Κύπρου (ΤΕΠΑΚ) · Λεμεσός",
+    edu2_date: "2021 - 2025",
+    edu2_title: "Πτυχίο: Επικοινωνία & Σπουδές Διαδικτύου - Τεχνολογίες Πληροφορικής",
+    edu2_sub: "Τεχνολογικό Πανεπιστήμιο Κύπρου (ΤΕΠΑΚ) · Λεμεσός",
+    edu3_date: "2018 - 2021",
+    edu3_title: "Απολυτήριο Λυκείου: Συνδυασμός Κομμωτικής",
+    edu3_sub: "Β' Τεχνική Σχολή Λεμεσού",
+    exp1_date: "ΟΚΤ 2024 - ΔΕΚ 2024",
+    exp1_title: "Ερευνητής - «Η Γειτονιά του Σινέ-Βόλος»",
+    exp1_body: "Τμήμα Επικοινωνίας και Σπουδών Διαδικτύου, ΤΕΠΑΚ. Ανάπτυξη ιστοσελίδας και διάχυση αποτελεσμάτων έρευνας.",
+    exp2_date: "ΙΟΥ 2024 - ΑΥΓ 2024",
+    exp2_title: "Web Developer - FOSETICO ENTERPRISES LTD",
+    exp2_body: "Δημιουργία και προγραμματισμός ιστοσελίδας. Σχεδιασμός, ανάπτυξη και παράδοση ολοκληρωμένου web project.",
+    exp3_date: "ΙΟΥ 2022 - ΙΟΥ 2022",
+    exp3_title: "Βοηθός Επιστάτης - Συνθετικό Γρασίδι",
+    exp3_body: "Εξυπηρέτηση πελατών, μορφοποίηση κήπου, εμφύτευση δέντρων και τοποθέτηση συνθετικού γρασιδιού.",
+    res1_date: "ΜΑΙ 2026 - Σήμερα · Μεταπτυχιακή Εργασία",
+    res1_title: "Config-only Multi-Agent Crypto Market Making με CrewAI & Ollama",
+    res1_body: "Επιβλέπων: Δρ. Σωτήριος Χατζής. Σχεδιασμός αρχιτεκτονικής agents, πειράματα με profiles ρευστότητας/ρίσκου και αξιολόγηση με PnL, inventory risk & execution quality.",
+    res2_date: "ΣΕΠ 2024 - ΜΑΙ 2025 · Πτυχιακή Εργασία",
+    res2_title: "Τεχνολογικές Επωνυμίες στο Instagram: Πολυτροπική Υπολογιστική Προσέγγιση",
+    res2_body: "Ανάλυση εικόνας & κειμένου 20 κορυφαίων tech brands με sentiment analysis, emotional analysis και topic modeling σε multimodal δεδομένα.",
+    res3_date: "ΟΚΤ 2024 - ΔΕΚ 2024 · Ερευνητικό Project",
+    res3_title: "Η Γειτονιά Σινέ-Βόλος",
+    res3_body: "Ρόλος Ερευνητικού Συνεργάτη. Ανάπτυξη ιστοσελίδας παρουσίασης και διάχυσης αποτελεσμάτων. Επιμέλεια ψηφιακού περιεχομένου.",
+    res3_link: "🔗 Δες το project →",
+    res4_date: "Εαρινό 2024 · Ακαδημαϊκή Εργασία",
+    res4_title: "Διαφορική Συμπεριφορά Χρηστών στα ΜΚΔ - Ευρωβουλευτές",
+    res4_body: "Ανάπτυξη Python software για ανάλυση μεγάλων δεδομένων. Εξερεύνηση gender differences στο περιεχόμενο αναρτήσεων Ευρωβουλευτών.",
+    res5_date: "ΣΕΠ 2023 - ΔΕΚ 2023 · Ντοκιμαντέρ",
+    res5_title: "Λεμεσιανό Καρναβάλι",
+    res5_body: "Σκηνοθέτης, Σεναριογράφος, Παραγωγός & Editor. Ιστορία του Καρναβαλιού μέσα από συνεντεύξεις και αρχεία του Παττίχειου Ιστορικού Αρχείου.",
+    skill_lang_title: "ΓΛΩΣΣΕΣ",
+    skill_greek: "Ελληνικά - Μητρική",
+    skill_english: "Αγγλικά - Μέτριο",
+    skill1: "🐍 Προγραμματισμός Python",
+    skill2: "🤖 Τεχνητή Νοημοσύνη / AI",
+    skill3: "📊 Ανάλυση Δεδομένων",
+    skill4: "💼 Microsoft Office",
+    skill5: "🌐 Web Dev (HTML/CSS/JS)",
+    skill6: "🔧 WordPress",
+    skill7: "📈 SPSS",
+    skill8: "🎨 Photoshop",
+    level_excellent: "Άριστο",
+    level_good: "Καλό",
+    level_intermediate: "Μέτριο",
+    cert1: "Practical Workshop - VERITAS-AI Project | EmpowerPath (EU Co-funded)",
+    cert2: "Ερευνητής - ΤΕΠΑΚ",
+    cert3: "ECDL - Presentation, Word Processing, Spreadsheets, Image Editing",
+    cert4: "Krav Maga - Practitioner, P2, P3, P4",
+    ach1_title: "Bowling - Χρυσό Μετάλλιο",
+    ach1_year: "2014 - 1η Θέση",
+    ach2_title: "Ολυμπιακή Γυμναστική - 3 Μετάλλια",
+    ach2_year: "2012 - 2014",
+    ach3_title: "Ολυμπιακή Γυμναστική - 3 Κύπελλα",
+    ach3_year: "2015 - 2018",
+    ach4_title: "Μαραθώνιος ΧΜ - Μετάλλιο",
+    ach4_year: "2026",
+    act1: "🏊 Κολύμπι",
+    act2: "🤸 Ολυμπιακή Γυμναστική",
+    act3: "🥊 MMA",
+    act4: "🦶 Kick-Boxing",
+    act5: "🥋 Krav Maga",
+    act6: "📻 Ραδιοφωνικός Παραγωγός",
+    act7: "🚗 Άδεια Οδήγησης",
+    act8: "🎲 Όμιλος Επιτραπέζιων (ΤΕΠΑΚ)",
+    act9: "💡 Όμιλος Νέων Τεχνολογιών (ΤΕΠΑΚ)",
+    footer_text: "© 2026 Χρύσανθος Σπύρου · Λεμεσός, Κύπρος"
+  }
+};
+
+let currentLang = 'en';
+let typedPI = 0;
+let typedCI = 0;
+let typedDeleting = false;
+let typedTimer = null;
+const typedEl = document.getElementById('typed');
+
+function startTyped() {
+  clearTimeout(typedTimer);
+  typedPI = 0;
+  typedCI = 0;
+  typedDeleting = false;
+  typedEl.textContent = '';
+  runTyped();
+}
+
+function runTyped() {
+  const phrases = T[currentLang].hero_typed;
+  const phrase = phrases[typedPI];
+  if (!typedDeleting) {
+    typedEl.textContent = phrase.slice(0, ++typedCI);
+    if (typedCI === phrase.length) {
+      typedDeleting = true;
+      typedTimer = setTimeout(runTyped, 1800);
+      return;
+    }
+  } else {
+    typedEl.textContent = phrase.slice(0, --typedCI);
+    if (typedCI === 0) {
+      typedDeleting = false;
+      typedPI = (typedPI + 1) % phrases.length;
+    }
+  }
+  typedTimer = setTimeout(runTyped, typedDeleting ? 38 : 72);
+}
+
+function setLang(lang) {
+  if (lang === currentLang) return;
+  currentLang = lang;
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-el').classList.toggle('active', lang === 'el');
+  document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+  document.getElementById('btn-el').setAttribute('aria-pressed', lang === 'el');
+  document.documentElement.lang = lang;
+
+  const textEls = document.querySelectorAll('[data-i18n]');
+  const htmlEls = document.querySelectorAll('[data-i18n-html]');
+  const allEls = [...textEls, ...htmlEls];
+  allEls.forEach((el) => el.classList.add('lang-fade'));
+
+  setTimeout(() => {
+    const dict = T[lang];
+    textEls.forEach((el) => {
+      const key = el.dataset.i18n;
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    htmlEls.forEach((el) => {
+      const key = el.dataset.i18nHtml;
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    allEls.forEach((el) => el.classList.remove('lang-fade'));
+    startTyped();
+  }, 180);
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const delay = parseInt(el.dataset.delay || 0, 10);
+    setTimeout(() => {
+      el.classList.add('visible');
+      const fill = el.querySelector('.skill-fill');
+      if (fill) setTimeout(() => { fill.style.width = `${fill.dataset.width}%`; }, 200);
+    }, delay);
+    observer.unobserve(el);
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.timeline-item').forEach((el, i) => {
+  el.dataset.delay = i * 120;
+  observer.observe(el);
+});
+document.querySelectorAll('.card, .achievement-card, .cert-item, .skill-item').forEach((el, i) => {
+  el.dataset.delay = (i % 4) * 90;
+  observer.observe(el);
+});
+
+startTyped();
+</script>
+</body>
+</html>
