@@ -4,311 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chrysanthos Spyrou – CV</title>
+<link rel="icon" type="image/png" href="images/6588143.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="images/6588143.png">
-
-<style>
-  :root {
-    --bg: #07070f;
-    --card: #141424;
-    --card-hover: #1a1a30;
-    --border: rgba(0,212,255,0.12);
-    --border-bright: rgba(0,212,255,0.35);
-    --cyan: #00d4ff;
-    --cyan-dim: rgba(0,212,255,0.08);
-    --cyan-glow: rgba(0,212,255,0.25);
-    --purple: #7c3aed;
-    --purple-dim: rgba(124,58,237,0.15);
-    --text: #e2e2f0;
-    --muted: #6b7290;
-    --muted2: #8888aa;
-    --white: #ffffff;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none; z-index: 0;
-  }
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 4px; }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 48px;
-    background: rgba(7,7,15,0.88);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo { font-family: 'Bebas Neue'; font-size: 1.4rem; letter-spacing: 2px; color: var(--cyan); }
-  .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
-  .nav-links a {
-    color: var(--muted2); text-decoration: none;
-    font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--cyan); }
-
-  /* ── LANGUAGE TOGGLE ── */
-  .lang-toggle {
-    display: flex; align-items: center; gap: 0;
-    border: 1px solid var(--border-bright);
-    border-radius: 8px; overflow: hidden;
-    background: var(--card);
-    cursor: pointer;
-  }
-  .lang-btn {
-    padding: 6px 13px;
-    font-size: 0.72rem; font-weight: 600; letter-spacing: 1px;
-    color: var(--muted2);
-    background: transparent;
-    border: none; cursor: pointer;
-    transition: all 0.2s;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  .lang-btn.active { background: var(--cyan); color: #07070f; }
-  .lang-btn:hover:not(.active) { color: var(--text); }
-  .lang-sep { width: 1px; height: 100%; background: var(--border-bright); }
-
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 120px 48px 80px; position: relative; overflow: hidden;
-  }
-  .hero-bg-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
-  }
-  .hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
-  .orb1 {
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%);
-    top: -100px; right: -100px;
-    animation: float1 8s ease-in-out infinite;
-  }
-  .orb2 {
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
-    bottom: -80px; left: -80px;
-    animation: float2 10s ease-in-out infinite;
-  }
-  @keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,30px)} }
-  @keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(25px,-25px)} }
-  .hero-content { max-width: 900px; width: 100%; position: relative; z-index: 1; }
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 16px;
-    border: 1px solid var(--border-bright); border-radius: 100px;
-    font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--cyan); font-weight: 500; margin-bottom: 28px;
-    background: var(--cyan-dim);
-    animation: fadeInUp 0.6s ease both;
-  }
-  .hero-tag::before {
-    content: ''; width: 6px; height: 6px; background: var(--cyan);
-    border-radius: 50%; box-shadow: 0 0 8px var(--cyan);
-    animation: blink 2s ease-in-out infinite;
-  }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  .hero-name {
-    font-family: 'Bebas Neue';
-    font-size: clamp(4rem, 12vw, 9rem); line-height: 0.95; letter-spacing: 3px;
-    color: var(--white);
-    animation: fadeInUp 0.6s ease 0.1s both;
-  }
-  .hero-name span { color: var(--cyan); }
-  .hero-subtitle {
-    font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
-    color: var(--muted2); margin-top: 20px; margin-bottom: 36px;
-    animation: fadeInUp 0.6s ease 0.2s both;
-  }
-  .hero-cursor { color: var(--cyan); animation: blink 1s step-end infinite; }
-  .hero-divider {
-    width: 80px; height: 2px;
-    background: linear-gradient(90deg, var(--cyan), transparent);
-    margin-bottom: 24px;
-    animation: fadeInUp 0.6s ease 0.3s both;
-  }
-  .hero-desc {
-    font-size: 1.05rem; color: var(--muted2); max-width: 560px; line-height: 1.8;
-    animation: fadeInUp 0.6s ease 0.35s both;
-  }
-  .hero-contacts {
-    display: flex; flex-wrap: wrap; gap: 12px;
-    margin-top: 40px;
-    animation: fadeInUp 0.6s ease 0.45s both;
-  }
-  .contact-pill {
-    display: flex; align-items: center; gap: 8px;
-    padding: 9px 20px;
-    border: 1px solid var(--border); border-radius: 8px;
-    color: var(--muted2); font-size: 0.82rem;
-    background: var(--card); transition: all 0.25s; text-decoration: none;
-  }
-  .contact-pill:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-dim); transform: translateY(-2px); }
-  .contact-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
-
-  @keyframes fadeInUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-
-  /* ── SECTIONS ── */
-  .section-wrap { padding: 96px 48px; max-width: 1100px; margin: 0 auto; }
-  .section-label { display: flex; align-items: center; gap: 12px; margin-bottom: 52px; }
-  .section-num { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--cyan); opacity: 0.7; }
-  .section-title { font-family: 'Bebas Neue'; font-size: 2.8rem; letter-spacing: 3px; color: var(--white); }
-  .section-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border-bright), transparent); margin-left: 8px; }
-  .section-divider { max-width: 1100px; margin: 0 auto; height: 1px; background: linear-gradient(90deg, transparent, var(--border-bright), transparent); }
-
-  /* ── TIMELINE ── */
-  .timeline { position: relative; padding-left: 32px; }
-  .timeline::before {
-    content: ''; position: absolute; left: 8px; top: 12px; bottom: 12px; width: 1px;
-    background: linear-gradient(180deg, var(--cyan) 0%, var(--purple) 60%, transparent 100%);
-  }
-  .timeline-item {
-    position: relative; margin-bottom: 40px;
-    padding: 28px 32px;
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    transition: border-color 0.3s, background 0.3s, transform 0.3s;
-    opacity: 0; transform: translateX(-20px);
-  }
-  .timeline-item.visible { animation: slideInX 0.5s ease forwards; }
-  .timeline-item:hover { border-color: var(--border-bright); background: var(--card-hover); transform: translateX(4px); }
-  .timeline-dot {
-    position: absolute; left: -39px; top: 32px;
-    width: 14px; height: 14px;
-    background: var(--bg); border: 2px solid var(--cyan); border-radius: 50%;
-    box-shadow: 0 0 12px var(--cyan-glow);
-  }
-  .timeline-date { font-family: 'JetBrains Mono'; font-size: 0.72rem; color: var(--cyan); letter-spacing: 1px; margin-bottom: 8px; }
-  .timeline-title { font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
-  .timeline-sub { font-size: 0.85rem; color: var(--muted2); }
-
-  /* ── CARDS ── */
-  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 20px; }
-  .card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-    padding: 28px; transition: all 0.3s;
-    opacity: 0; transform: translateY(20px);
-  }
-  .card.visible { animation: fadeUp 0.5s ease forwards; }
-  .card:hover { border-color: var(--border-bright); background: var(--card-hover); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,212,255,0.08); }
-  .card-icon { font-size: 1.5rem; margin-bottom: 14px; display: block; }
-  .card-period { font-family: 'JetBrains Mono'; font-size: 0.68rem; color: var(--cyan); letter-spacing: 1px; margin-bottom: 8px; }
-  .card-title { font-size: 0.95rem; font-weight: 600; color: var(--white); line-height: 1.45; margin-bottom: 8px; }
-  .card-body { font-size: 0.82rem; color: var(--muted2); line-height: 1.65; }
-  .card-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; font-size: 0.75rem; color: var(--cyan); text-decoration: none; opacity: 0.8; transition: opacity 0.2s; }
-  .card-link:hover { opacity: 1; }
-
-  /* ── SKILLS ── */
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-  .skill-item {
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    padding: 18px 22px; transition: all 0.3s;
-    opacity: 0; transform: scale(0.96);
-  }
-  .skill-item.visible { animation: popIn 0.4s ease forwards; }
-  .skill-item:hover { border-color: var(--border-bright); background: var(--card-hover); }
-  .skill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-  .skill-name { font-size: 0.85rem; font-weight: 500; color: var(--text); }
-  .skill-level { font-family: 'JetBrains Mono'; font-size: 0.65rem; color: var(--muted); }
-  .skill-bar { height: 3px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
-  .skill-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--cyan), var(--purple)); width: 0; transition: width 1s ease 0.3s; }
-
-  /* ── TAGS ── */
-  .tags-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-  .tag { padding: 6px 14px; background: var(--cyan-dim); border: 1px solid var(--border-bright); border-radius: 100px; font-size: 0.75rem; color: var(--cyan); font-weight: 500; }
-  .tag.purple { background: var(--purple-dim); border-color: rgba(124,58,237,0.35); color: #a78bfa; }
-
-  /* ── CERTS ── */
-  .certs-list { display: flex; flex-direction: column; gap: 12px; }
-  .cert-item {
-    display: flex; align-items: center; gap: 16px;
-    padding: 16px 22px;
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    transition: all 0.3s;
-    opacity: 0; transform: translateX(-16px);
-  }
-  .cert-item.visible { animation: slideInX 0.4s ease forwards; }
-  .cert-item:hover { border-color: var(--border-bright); background: var(--card-hover); transform: translateX(4px); }
-  .cert-dot { width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 8px var(--cyan-glow); }
-  .cert-name { font-size: 0.875rem; color: var(--text); flex: 1; font-weight: 500; }
-  .cert-year { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--muted); }
-
-  /* ── ACHIEVEMENTS ── */
-  .achievements-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
-  .achievement-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-    padding: 28px 22px; text-align: center; transition: all 0.3s;
-    opacity: 0;
-  }
-  .achievement-card.visible { animation: fadeUp 0.5s ease forwards; }
-  .achievement-card:hover { border-color: var(--border-bright); background: var(--card-hover); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,212,255,0.08); }
-  .achievement-medal { font-size: 2.5rem; margin-bottom: 14px; display: block; }
-  .achievement-title { font-size: 0.88rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
-  .achievement-year { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--cyan); }
-
-  /* ── ACTIVITIES ── */
-  .activities-row { display: flex; flex-wrap: wrap; gap: 10px; }
-  .activity-chip {
-    display: flex; align-items: center; gap: 8px;
-    padding: 10px 18px;
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    font-size: 0.8rem; color: var(--muted2); transition: all 0.25s;
-  }
-  .activity-chip:hover { border-color: var(--border-bright); color: var(--text); background: var(--card-hover); transform: translateY(-2px); }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border); padding: 40px 48px;
-    text-align: center; color: var(--muted);
-    font-size: 0.78rem; font-family: 'JetBrains Mono'; letter-spacing: 1px;
-  }
-  footer span { color: var(--cyan); }
-
-  /* ── ANIMATIONS ── */
-  @keyframes slideInX { to{opacity:1;transform:translateX(0)} }
-  @keyframes fadeUp   { to{opacity:1;transform:translateY(0)} }
-  @keyframes popIn    { to{opacity:1;transform:scale(1)} }
-
-  /* ── LANGUAGE TRANSITION ── */
-  [data-i18n], [data-i18n-html] { transition: opacity 0.18s ease; }
-  .lang-fade { opacity: 0; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .nav-links { gap: 14px; }
-    .nav-links li.nav-link-item { display: none; }
-    .section-wrap { padding: 72px 20px; }
-    #hero { padding: 100px 20px 60px; }
-    .cards-grid { grid-template-columns: 1fr; }
-    .achievements-grid { grid-template-columns: repeat(2,1fr); }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">C.S</div>
+  <a href="#hero" class="nav-logo">C.S</a>
   <ul class="nav-links">
     <li class="nav-link-item"><a href="#education" data-i18n="nav_education">Education</a></li>
     <li class="nav-link-item"><a href="#experience" data-i18n="nav_experience">Experience</a></li>
@@ -331,9 +36,7 @@
   <div class="hero-orb orb1"></div>
   <div class="hero-orb orb2"></div>
   <div class="hero-content">
-    
-    <!-- <div class="hero-tag"><span data-i18n="hero_tag">Available for opportunities</span></div> -->
-
+    <div class="hero-tag"><span data-i18n="hero_tag">Available for opportunities</span></div>
     <h1 class="hero-name">CHRYSANTHOS<br><span>SPYROU</span></h1>
     <p class="hero-subtitle">&gt; <span id="typed"></span><span class="hero-cursor">|</span></p>
     <div class="hero-divider"></div>
@@ -411,15 +114,13 @@
     <div class="section-line"></div>
   </div>
   <div class="cards-grid">
-
     <div class="card">
       <span class="card-icon">🔬</span>
       <div class="card-period" data-i18n="exp1_date">OCT 2024 — DEC 2024</div>
       <div class="card-title" data-i18n="exp1_title">Researcher – "The Neighbourhood of Ciné-Volos"</div>
       <div class="card-body" data-i18n="exp1_body">Department of Communication and Internet Studies, CUT. Website development and dissemination of research results.</div>
-      <a class="card-link" href="https://cinevolosproject.cut.ac.cy/" target="_blank">🔗 cinevolosproject.cut.ac.cy</a>
+      <a class="card-link" href="https://cinevolosproject.cut.ac.cy/" target="_blank">🔗 cinevolosproject.cut.ac.cy →</a>
     </div>
-
     <div class="card">
       <span class="card-icon">💻</span>
       <div class="card-period" data-i18n="exp2_date">JUN 2024 — AUG 2024</div>
@@ -491,6 +192,7 @@
       <div class="card-period" data-i18n="res5_date">SEP 2023 — DEC 2023 · Documentary</div>
       <div class="card-title" data-i18n="res5_title">Limassol Carnival</div>
       <div class="card-body" data-i18n="res5_body">Director, Screenwriter, Producer & Editor. History of the Carnival through interviews and archives from the Pattichio Historical Archive of Limassol.</div>
+      <a class="card-link" href="https://youtu.be/yho9_0LkibI?si=ORUalHSQQn3qWAD5" target="_blank" data-i18n="res5_link">🎥 Watch the documentary</a>
     </div>
   </div>
 </div>
@@ -639,10 +341,137 @@
 
 <div class="section-divider"></div>
 
+<!-- VOLUNTEERING & CLUBS -->
+<div class="section-wrap" id="volunteering">
+  <div class="section-label">
+    <span class="section-num">07</span>
+    <h2 class="section-title" data-i18n="sec_volunteering">VOLUNTEERING & CLUBS</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="certs-list">
+    <div class="vol-item">
+      <span class="vol-icon">💡</span>
+      <div class="vol-content">
+        <div class="vol-title" data-i18n="vol1_title">Member – New Technologies Club, CUT</div>
+        <div class="vol-sub" data-i18n="vol1_sub">Role: Social Media Manager</div>
+      </div>
+      <span class="vol-year">2025</span>
+    </div>
+    <div class="vol-item">
+      <span class="vol-icon">🎲</span>
+      <div class="vol-content">
+        <div class="vol-title" data-i18n="vol2_title">Member – Board Games Club, CUT</div>
+      </div>
+      <span class="vol-year">2025</span>
+    </div>
+    <div class="vol-item">
+      <span class="vol-icon">🧮</span>
+      <div class="vol-content">
+        <div class="vol-title" data-i18n="vol3_title">Volunteer – "The Life and Contribution of Pythagoras to Mathematics, Sciences and Philosophy"</div>
+        <div class="vol-sub" data-i18n="vol3_sub">CUT</div>
+      </div>
+      <span class="vol-year">2025</span>
+    </div>
+    <div class="vol-item">
+      <span class="vol-icon">🌍</span>
+      <div class="vol-content">
+        <div class="vol-title" data-i18n="vol4_title">Volunteer – European Project "Green Transitions"</div>
+        <div class="vol-sub" data-i18n="vol4_sub">Limassol</div>
+      </div>
+      <span class="vol-year">2025</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- CONFERENCES & SEMINARS -->
+<div class="section-wrap" id="conferences">
+  <div class="section-label">
+    <span class="section-num">08</span>
+    <h2 class="section-title" data-i18n="sec_conferences">CONFERENCES & SEMINARS</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="certs-list">
+    <div class="conf-item">
+      <span class="conf-badge workshop" data-i18n="badge_workshop">WORKSHOP</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf1_title">VERITAS-AI Project Framework, EmpowerPath (EU Co-funded)</div>
+        <div class="conf-meta" data-i18n="conf1_meta">23.04.2026 · Limassol</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <span class="conf-badge seminar" data-i18n="badge_seminar">SEMINAR</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf2_title">"Arrest and Control"</div>
+        <div class="conf-meta" data-i18n="conf2_meta">09.12.2023 · Constantinoupoleos Primary School, Nicosia</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <span class="conf-badge day" data-i18n="badge_day">CONFERENCE DAY</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf3_title">"Internship & Ways of Connecting the CIS Department with the Job Market"</div>
+        <div class="conf-meta" data-i18n="conf3_meta">26.01.2024 · CUT, Limassol</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <span class="conf-badge day" data-i18n="badge_day">CONFERENCE DAY</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf4_title">"Handshake with the Future"</div>
+        <div class="conf-meta" data-i18n="conf4_meta">12.02.2024 · CUT, Limassol</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <span class="conf-badge seminar" data-i18n="badge_seminar">SEMINAR</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf5_title">"Students, Educators & AI Chatbots: Initial Reactions to AI-Generated Content in American Schools"</div>
+        <div class="conf-meta" data-i18n="conf5_meta">28.03.2024 · CUT, Limassol</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <span class="conf-badge seminar" data-i18n="badge_seminar">SEMINAR</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf6_title">"AI Wave: Ride into the Future"</div>
+        <div class="conf-meta" data-i18n="conf6_meta">10.04.2024 · CUT, Limassol</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <span class="conf-badge seminar" data-i18n="badge_seminar">SEMINAR</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf7_title">"Handshake with the Future"</div>
+        <div class="conf-meta" data-i18n="conf7_meta">04.02.2025 · CUT, Limassol</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <span class="conf-badge day" data-i18n="badge_day">CONFERENCE DAY</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf8_title">"World Hearing Day"</div>
+        <div class="conf-meta" data-i18n="conf8_meta">15.03.2025 · CUT, Limassol</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <span class="conf-badge day" data-i18n="badge_day">CONFERENCE DAY</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf9_title">"Sustainable & Inclusive Wine Tourism in the Digital Age"</div>
+        <div class="conf-meta" data-i18n="conf9_meta">25.11.2025 · CUT, Limassol</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <span class="conf-badge seminar" data-i18n="badge_seminar">SEMINAR</span>
+      <div class="conf-content">
+        <div class="conf-title" data-i18n="conf10_title">"AI: From a User's Perspective"</div>
+        <div class="conf-meta" data-i18n="conf10_meta">26.11.2025 · CUT, Limassol</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
 <!-- ACTIVITIES -->
 <div class="section-wrap">
   <div class="section-label">
-    <span class="section-num">07</span>
+    <span class="section-num">09</span>
     <h2 class="section-title" data-i18n="sec_activities">ACTIVITIES</h2>
     <div class="section-line"></div>
   </div>
@@ -654,8 +483,6 @@
     <div class="activity-chip" data-i18n="act5">🥋 Krav Maga</div>
     <div class="activity-chip" data-i18n="act6">📻 Radio Producer</div>
     <div class="activity-chip" data-i18n="act7">🚗 Driving License</div>
-    <div class="activity-chip" data-i18n="act8">🎲 Board Games Club (CUT)</div>
-    <div class="activity-chip" data-i18n="act9">💡 New Technologies Club (CUT)</div>
   </div>
 </div>
 
@@ -664,273 +491,6 @@
   <p><span data-i18n="footer_text">© 2026 Chrysanthos Spyrou · Limassol, Cyprus</span> · <span>chrysanthosgr@gmail.com</span></p>
 </footer>
 
-<script>
-/* ════════════════════════════════════════
-   TRANSLATIONS
-════════════════════════════════════════ */
-const T = {
-  en: {
-    nav_education: "Education",
-    nav_experience: "Experience",
-    nav_research: "Research",
-    nav_skills: "Skills",
-    nav_more: "More",
-    hero_tag: "Available for opportunities",
-    hero_location: "Limassol, Cyprus",
-    hero_desc_html: 'Graduate student in <strong style="color:var(--text)">AI & Data Engineering</strong> at CUT. Passionate about artificial intelligence, data analysis and innovative applications. Based in <strong style="color:var(--text)">Limassol, Cyprus</strong>.',
-    hero_typed: ["AI & Data Engineering MSc","Python Developer","Researcher @ CUT","Multi-Agent Systems"],
-    sec_education: "EDUCATION",
-    sec_experience: "WORK EXPERIENCE",
-    sec_research: "RESEARCH",
-    sec_skills: "SKILLS",
-    sec_certs: "CERTIFICATIONS",
-    sec_achievements: "ACHIEVEMENTS",
-    sec_activities: "ACTIVITIES",
-    edu1_date: "2025 — Present",
-    edu1_title: "MSc: Artificial Intelligence (AI) & Data Engineering",
-    edu1_sub: "Cyprus University of Technology (CUT) · Limassol",
-    edu2_date: "2021 — 2025",
-    edu2_title: "BSc: Communication and Internet Studies – Information Technology",
-    edu2_sub: "Cyprus University of Technology (CUT) · Limassol",
-    edu3_date: "2018 — 2021",
-    edu3_title: "High School Diploma: Hairdressing Combination",
-    edu3_sub: "2nd Technical School, Limassol",
-    exp1_date: "OCT 2024 — DEC 2024",
-    exp1_title: 'Researcher – "The Neighbourhood of Ciné-Volos"',
-    exp1_body: "Department of Communication and Internet Studies, CUT. Website development and dissemination of research results.",
-    exp2_date: "JUN 2024 — AUG 2024",
-    exp2_title: "Web Developer – FOSETICO ENTERPRISES LTD",
-    exp2_body: "Creation and programming of a website. Full design, development and delivery of a complete web project.",
-    exp3_date: "JUN 2022 — JUL 2022",
-    exp3_title: "Assistant Supervisor – Synthetic Grass",
-    exp3_body: "Customer service, garden landscaping, tree and flower planting, gravel work and artificial grass installation.",
-    res1_date: "MAY 2026 — Present · MSc Thesis",
-    res1_title: "Config-only Multi-Agent Crypto Market Making with CrewAI & Ollama",
-    res1_body: "Supervisor: Dr. Sotirios Chatzis. Agent architecture design, experiments with liquidity/risk profiles and performance evaluation with PnL, inventory risk & execution quality.",
-    res2_date: "SEP 2024 — MAY 2025 · BSc Thesis",
-    res2_title: "Tech Brands on Instagram: A Multimodal Computational Approach for Content Analysis",
-    res2_body: "Image & text analysis of the top 20 technology brands using sentiment analysis, emotional analysis and topic modeling on multimodal data.",
-    res3_date: "OCT 2024 — DEC 2024 · Research Project",
-    res3_title: "The Neighbourhood of Ciné-Volos",
-    res3_body: "Role: Research Associate. Website development for presentation and dissemination of research results. Digital content management.",
-    res3_link: "🔗 View the project →",
-    res4_date: "Spring 2024 · Academic Research",
-    res4_title: "Differential Behavior of Male & Female Users on Social Media – MEPs",
-    res4_body: "Development of Python software for big data analysis. Exploration of gender differences in MEPs' social media post content.",
-    res5_date: "SEP 2023 — DEC 2023 · Documentary",
-    res5_title: "Limassol Carnival",
-    res5_body: "Director, Screenwriter, Producer & Editor. History of the Carnival through interviews and archives from the Pattichio Historical Archive of Limassol.",
-    skill_lang_title: "LANGUAGES",
-    skill_greek: "Greek — Native",
-    skill_english: "English — Intermediate",
-    skill1: "🐍 Python Programming",
-    skill2: "🤖 Artificial Intelligence / AI",
-    skill3: "📊 Data Analysis",
-    skill4: "💼 Microsoft Office",
-    skill5: "🌐 Web Dev (HTML/CSS/JS)",
-    skill6: "🔧 WordPress",
-    skill7: "📈 SPSS",
-    skill8: "🎨 Photoshop",
-    level_excellent: "Excellent",
-    level_good: "Good",
-    level_intermediate: "Intermediate",
-    cert1: "Practical Workshop – VERITAS-AI Project | EmpowerPath (EU Co-funded)",
-    cert2: "Researcher – CUT",
-    cert3: "ECDL – Presentation, Word Processing, Spreadsheets, Image Editing",
-    cert4: "Krav Maga – Practitioner, P2, P3, P4",
-    ach1_title: "Bowling · Gold Medal",
-    ach1_year: "2014 · 1st Place",
-    ach2_title: "Olympic Gymnastics · 3 Medals",
-    ach2_year: "2012 — 2014",
-    ach3_title: "Olympic Gymnastics · 3 Cups",
-    ach3_year: "2015 — 2018",
-    ach4_title: "XM Marathon · Medal",
-    ach4_year: "2026",
-    act1: "🏊 Swimming",
-    act2: "🤸 Olympic Gymnastics",
-    act3: "🥊 MMA",
-    act4: "🦶 Kick-Boxing",
-    act5: "🥋 Krav Maga",
-    act6: "📻 Radio Producer",
-    act7: "🚗 Driving License",
-    act8: "🎲 Board Games Club (CUT)",
-    act9: "💡 New Technologies Club (CUT)",
-    footer_text: "© 2026 Chrysanthos Spyrou · Limassol, Cyprus"
-  },
-  el: {
-    nav_education: "Εκπαίδευση",
-    nav_experience: "Εμπειρία",
-    nav_research: "Έρευνα",
-    nav_skills: "Δεξιότητες",
-    nav_more: "Επιπλέον",
-    hero_tag: "Διαθέσιμος για ευκαιρίες",
-    hero_location: "Λεμεσός, Κύπρος",
-    hero_desc_html: 'Μεταπτυχιακός φοιτητής στο <strong style="color:var(--text)">AI & Μηχανική Δεδομένων</strong> στο ΤΕΠΑΚ. Πάθος για τεχνητή νοημοσύνη, ανάλυση δεδομένων και καινοτόμες εφαρμογές. Βασισμένος στη <strong style="color:var(--text)">Λεμεσό, Κύπρος</strong>.',
-    hero_typed: ["MSc Τεχνητή Νοημοσύνη","Python Developer","Ερευνητής @ ΤΕΠΑΚ","Multi-Agent Systems"],
-    sec_education: "ΕΚΠΑΙΔΕΥΣΗ",
-    sec_experience: "ΕΡΓΑΣΙΑΚΗ ΕΜΠΕΙΡΙΑ",
-    sec_research: "ΕΡΕΥΝΕΣ",
-    sec_skills: "ΔΕΞΙΟΤΗΤΕΣ",
-    sec_certs: "ΠΙΣΤΟΠΟΙΗΤΙΚΑ",
-    sec_achievements: "ΕΠΙΤΕΥΓΜΑΤΑ",
-    sec_activities: "ΔΡΑΣΤΗΡΙΟΤΗΤΕΣ",
-    edu1_date: "2025 — Σήμερα",
-    edu1_title: "Μεταπτυχιακό: Τεχνητή Νοημοσύνη (AI) & Μηχανική Δεδομένων",
-    edu1_sub: "Τεχνολογικό Πανεπιστήμιο Κύπρου (ΤΕΠΑΚ) · Λεμεσός",
-    edu2_date: "2021 — 2025",
-    edu2_title: "Πτυχίο: Επικοινωνία & Σπουδές Διαδικτύου – Τεχνολογίες Πληροφορικής",
-    edu2_sub: "Τεχνολογικό Πανεπιστήμιο Κύπρου (ΤΕΠΑΚ) · Λεμεσός",
-    edu3_date: "2018 — 2021",
-    edu3_title: "Απολυτήριο Λυκείου: Συνδυασμός Κομμωτικής",
-    edu3_sub: "Β΄ Τεχνική Σχολή Λεμεσού",
-    exp1_date: "ΟΚΤ 2024 — ΔΕΚ 2024",
-    exp1_title: "Ερευνητής – «Η Γειτονιά του Σινέ-Βόλος»",
-    exp1_body: "Τμήμα Επικοινωνίας και Σπουδών Διαδικτύου, ΤΕΠΑΚ. Ανάπτυξη ιστοσελίδας και διάχυση αποτελεσμάτων έρευνας.",
-    exp2_date: "ΙΟΥ 2024 — ΑΥΓ 2024",
-    exp2_title: "Web Developer – FOSETICO ENTERPRISES LTD",
-    exp2_body: "Δημιουργία και προγραμματισμός ιστοσελίδας. Σχεδιασμός, ανάπτυξη και παράδοση ολοκληρωμένου web project.",
-    exp3_date: "ΙΟΥ 2022 — ΙΟΥ 2022",
-    exp3_title: "Βοηθός Επιστάτης – Συνθετικό Γρασίδι",
-    exp3_body: "Εξυπηρέτηση πελατών, μορφοποίηση κήπου, εμφύτευση δέντρων και τοποθέτηση συνθετικού γρασιδιού.",
-    res1_date: "ΜΑΙ 2026 — Σήμερα · Μεταπτυχιακή Εργασία",
-    res1_title: "Config-only Multi-Agent Crypto Market Making με CrewAI & Ollama",
-    res1_body: "Επιβλέπων: Δρ. Σωτήριος Χατζής. Σχεδιασμός αρχιτεκτονικής agents, πειράματα με profiles ρευστότητας/ρίσκου και αξιολόγηση με PnL, inventory risk & execution quality.",
-    res2_date: "ΣΕΠ 2024 — ΜΑΙ 2025 · Πτυχιακή Εργασία",
-    res2_title: "Τεχνολογικές Επωνυμίες στο Instagram: Πολυτροπική Υπολογιστική Προσέγγιση",
-    res2_body: "Ανάλυση εικόνας & κειμένου 20 κορυφαίων tech brands με sentiment analysis, emotional analysis και topic modeling σε multimodal δεδομένα.",
-    res3_date: "ΟΚΤ 2024 — ΔΕΚ 2024 · Ερευνητικό Project",
-    res3_title: "Η Γειτονιά Σινέ-Βόλος",
-    res3_body: "Ρόλος Ερευνητικού Συνεργάτη. Ανάπτυξη ιστοσελίδας παρουσίασης και διάχυσης αποτελεσμάτων. Επιμέλεια ψηφιακού περιεχομένου.",
-    res3_link: "🔗 Δες το project →",
-    res4_date: "Εαρινό 2024 · Ακαδημαϊκή Εργασία",
-    res4_title: "Διαφορική Συμπεριφορά Χρηστών στα ΜΚΔ – Ευρωβουλευτές",
-    res4_body: "Ανάπτυξη Python software για ανάλυση μεγάλων δεδομένων. Εξερεύνηση gender differences στο περιεχόμενο αναρτήσεων Ευρωβουλευτών.",
-    res5_date: "ΣΕΠ 2023 — ΔΕΚ 2023 · Ντοκιμαντέρ",
-    res5_title: "Λεμεσιανό Καρναβάλι",
-    res5_body: "Σκηνοθέτης, Σεναριογράφος, Παραγωγός & Editor. Ιστορία του Καρναβαλιού μέσα από συνεντεύξεις και αρχεία του Παττίχειου Ιστορικού Αρχείου.",
-    skill_lang_title: "ΓΛΩΣΣΕΣ",
-    skill_greek: "Ελληνικά — Μητρική",
-    skill_english: "Αγγλικά — Μέτριο",
-    skill1: "🐍 Προγραμματισμός Python",
-    skill2: "🤖 Τεχνητή Νοημοσύνη / AI",
-    skill3: "📊 Ανάλυση Δεδομένων",
-    skill4: "💼 Microsoft Office",
-    skill5: "🌐 Web Dev (HTML/CSS/JS)",
-    skill6: "🔧 WordPress",
-    skill7: "📈 SPSS",
-    skill8: "🎨 Photoshop",
-    level_excellent: "Άριστο",
-    level_good: "Καλό",
-    level_intermediate: "Μέτριο",
-    cert1: "Practical Workshop – VERITAS-AI Project | EmpowerPath (EU Co-funded)",
-    cert2: "Ερευνητής – ΤΕΠΑΚ",
-    cert3: "ECDL – Presentation, Word Processing, Spreadsheets, Image Editing",
-    cert4: "Krav Maga – Practitioner, P2, P3, P4",
-    ach1_title: "Bowling · Χρυσό Μετάλλιο",
-    ach1_year: "2014 · 1η Θέση",
-    ach2_title: "Ολυμπιακή Γυμναστική · 3 Μετάλλια",
-    ach2_year: "2012 — 2014",
-    ach3_title: "Ολυμπιακή Γυμναστική · 3 Κύπελλα",
-    ach3_year: "2015 — 2018",
-    ach4_title: "Μαραθώνιος ΧΜ · Μετάλλιο",
-    ach4_year: "2026",
-    act1: "🏊 Κολύμπι",
-    act2: "🤸 Ολυμπιακή Γυμναστική",
-    act3: "🥊 MMA",
-    act4: "🦶 Kick-Boxing",
-    act5: "🥋 Krav Maga",
-    act6: "📻 Ραδιοφωνικός Παραγωγός",
-    act7: "🚗 Άδεια Οδήγησης",
-    act8: "🎲 Όμιλος Επιτραπέζιων (ΤΕΠΑΚ)",
-    act9: "💡 Όμιλος Νέων Τεχνολογιών (ΤΕΠΑΚ)",
-    footer_text: "© 2026 Χρύσανθος Σπύρου · Λεμεσός, Κύπρος"
-  }
-};
-
-/* ════════════════════════════════════════
-   TYPED EFFECT
-════════════════════════════════════════ */
-let currentLang = 'en';
-let typedPI = 0, typedCI = 0, typedDeleting = false, typedTimer = null;
-const typedEl = document.getElementById('typed');
-
-function startTyped() {
-  clearTimeout(typedTimer);
-  typedPI = 0; typedCI = 0; typedDeleting = false;
-  typedEl.textContent = '';
-  runTyped();
-}
-
-function runTyped() {
-  const phrases = T[currentLang].hero_typed;
-  const phrase = phrases[typedPI];
-  if (!typedDeleting) {
-    typedEl.textContent = phrase.slice(0, ++typedCI);
-    if (typedCI === phrase.length) { typedDeleting = true; typedTimer = setTimeout(runTyped, 2000); return; }
-  } else {
-    typedEl.textContent = phrase.slice(0, --typedCI);
-    if (typedCI === 0) { typedDeleting = false; typedPI = (typedPI + 1) % phrases.length; }
-  }
-  typedTimer = setTimeout(runTyped, typedDeleting ? 38 : 72);
-}
-
-/* ════════════════════════════════════════
-   LANGUAGE SWITCH
-════════════════════════════════════════ */
-function setLang(lang) {
-  if (lang === currentLang) return;
-  currentLang = lang;
-
-  // Toggle button states
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-el').classList.toggle('active', lang === 'el');
-  document.documentElement.lang = lang;
-
-  // Fade all translatable elements out
-  const textEls  = document.querySelectorAll('[data-i18n]');
-  const htmlEls  = document.querySelectorAll('[data-i18n-html]');
-  const allEls   = [...textEls, ...htmlEls];
-  allEls.forEach(el => el.classList.add('lang-fade'));
-
-  setTimeout(() => {
-    const dict = T[lang];
-    textEls.forEach(el => {
-      const key = el.dataset.i18n;
-      if (dict[key] !== undefined) el.textContent = dict[key];
-    });
-    htmlEls.forEach(el => {
-      const key = el.dataset.i18nHtml;
-      if (dict[key] !== undefined) el.innerHTML = dict[key];
-    });
-    allEls.forEach(el => el.classList.remove('lang-fade'));
-
-    // Restart typed effect with new language phrases
-    startTyped();
-  }, 180);
-}
-
-/* ════════════════════════════════════════
-   INTERSECTION OBSERVER (scroll reveals)
-════════════════════════════════════════ */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const el = entry.target;
-    const delay = parseInt(el.dataset.delay || 0);
-    setTimeout(() => {
-      el.classList.add('visible');
-      const fill = el.querySelector('.skill-fill');
-      if (fill) setTimeout(() => { fill.style.width = fill.dataset.width + '%'; }, 200);
-    }, delay);
-    observer.unobserve(el);
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.timeline-item').forEach((el, i) => { el.dataset.delay = i * 120; observer.observe(el); });
-document.querySelectorAll('.card, .achievement-card, .cert-item, .skill-item').forEach((el, i) => { el.dataset.delay = (i % 4) * 90; observer.observe(el); });
-
-// Start
-startTyped();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
