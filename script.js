@@ -105,3 +105,12 @@ async function init() {
 }
 
 init();
+
+/* ════════════════════════════════════════
+   PRINT PREPARATION
+════════════════════════════════════════ */
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('.skill-fill').forEach(fill => {
+    fill.style.width = (fill.dataset.width || 0) + '%';
+  });
+});
