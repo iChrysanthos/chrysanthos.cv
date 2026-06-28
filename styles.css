@@ -73,6 +73,9 @@
   .lang-btn:hover:not(.active) { color: var(--text); }
   .lang-sep { width: 1px; height: 100%; background: var(--border-bright); }
 
+  /* ── PRINT HEADER (hidden on screen) ── */
+  #print-header { display: none; }
+
   /* ── PDF BUTTON ── */
   .pdf-btn {
     padding: 7px 16px;
@@ -355,7 +358,7 @@
     transition: none !important;
   }
 
-  @page { margin: 10mm 12mm; size: A4 portrait; }
+  @page { margin: 8mm 12mm; size: A4 portrait; }
 
   body {
     background: #fff !important;
@@ -365,12 +368,29 @@
   }
   body::before { display: none !important; }
 
+  /* ─ PRINT HEADER (date right-aligned) ─ */
+  #print-header {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 4pt;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    margin-bottom: 4pt;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: #555568;
+  }
+
   /* ─ HIDE decorative / nav / footer / big sections ─ */
   nav, .pdf-btn, .lang-toggle,
   .hero-bg-grid, .hero-orb,
   .hero-subtitle, .hero-cursor, .hero-divider, .hero-desc,
   .section-divider, footer,
   #conferences, #volunteering { display: none !important; }
+
+  /* ─ NAME on one line ─ */
+  .name-br { display: none !important; }
+  .hero-name span { margin-left: 10pt; }
 
   /* ─ HERO → compact header ─ */
   #hero {
@@ -407,7 +427,6 @@
     padding: 5pt 0 3pt !important;
     max-width: 100% !important;
     margin: 0 !important;
-    page-break-inside: avoid;
   }
   .section-label { margin-bottom: 5pt !important; gap: 7pt !important; }
   .section-num { font-size: 0.58rem !important; opacity: 1 !important; color: #0066aa !important; }
