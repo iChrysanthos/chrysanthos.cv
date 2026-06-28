@@ -348,65 +348,186 @@
 
 /* ── PRINT / PDF ── */
 @media print {
-  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-
-  :root {
-    --bg: #ffffff;
-    --card: #f4f4f8;
-    --card-hover: #ebebf3;
-    --border: rgba(0,0,0,0.1);
-    --border-bright: rgba(0,0,0,0.2);
-    --cyan: #0077aa;
-    --cyan-dim: rgba(0,119,170,0.08);
-    --purple: #5b21b6;
-    --text: #111122;
-    --muted: #555566;
-    --muted2: #444455;
-    --white: #ffffff;
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    animation: none !important;
+    transition: none !important;
   }
 
-  body { background: #fff; color: #111122; font-size: 11pt; }
-  body::before { display: none; }
+  @page { margin: 10mm 12mm; size: A4 portrait; }
 
-  nav, .pdf-btn, .lang-toggle, .hero-bg-grid, .hero-orb,
-  .hero-cursor, .section-divider, footer { display: none !important; }
+  body {
+    background: #fff !important;
+    color: #111122 !important;
+    font-size: 8.5pt !important;
+    line-height: 1.4 !important;
+  }
+  body::before { display: none !important; }
 
+  /* ─ HIDE decorative / nav / footer / big sections ─ */
+  nav, .pdf-btn, .lang-toggle,
+  .hero-bg-grid, .hero-orb,
+  .hero-subtitle, .hero-cursor, .hero-divider, .hero-desc,
+  .section-divider, footer,
+  #conferences, #volunteering { display: none !important; }
+
+  /* ─ HERO → compact header ─ */
   #hero {
-    min-height: unset; padding: 24pt 0 16pt;
-    page-break-after: avoid;
+    min-height: unset !important;
+    padding: 0 0 8pt !important;
+    position: static !important;
+    overflow: visible !important;
+    display: block !important;
+    border-bottom: 2pt solid #0066aa;
+    margin-bottom: 6pt;
   }
-  .hero-name { font-size: 36pt; }
-  .hero-subtitle { font-size: 11pt; }
-  .hero-divider { margin: 10pt 0; }
-  .hero-desc { font-size: 10pt; }
-  .hero-contacts { gap: 8pt; flex-wrap: wrap; }
+  .hero-content { max-width: 100%; position: static !important; z-index: auto !important; }
+  .hero-name {
+    font-size: 26pt !important;
+    line-height: 1 !important;
+    color: #111122 !important;
+    letter-spacing: 2px;
+  }
+  .hero-name span { color: #0066aa !important; }
+  .hero-contacts { margin-top: 5pt !important; gap: 5pt !important; flex-wrap: wrap !important; }
   .contact-pill {
-    border: 1px solid var(--border-bright);
-    color: var(--muted2);
-    font-size: 9pt;
-    padding: 4pt 10pt;
+    padding: 2pt 7pt !important;
+    font-size: 7pt !important;
+    border: 1px solid rgba(0,0,0,0.2) !important;
+    border-radius: 3pt !important;
+    color: #44445a !important;
+    background: transparent !important;
+    transform: none !important;
+  }
+  .contact-pill svg { width: 9px !important; height: 9px !important; }
+
+  /* ─ SECTIONS ─ */
+  .section-wrap {
+    padding: 5pt 0 3pt !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+  }
+  .section-label { margin-bottom: 5pt !important; gap: 7pt !important; }
+  .section-num { font-size: 0.58rem !important; opacity: 1 !important; color: #0066aa !important; }
+  .section-title { font-size: 9.5pt !important; letter-spacing: 2px !important; color: #111122 !important; }
+  .section-line { background: rgba(0,0,0,0.15) !important; flex: 1; }
+
+  /* make all animated elements visible */
+  .timeline-item, .card, .achievement-card, .cert-item,
+  .skill-item, .vol-item, .conf-item, .activity-chip {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
-  .section-wrap { padding: 18pt 0; page-break-inside: avoid; }
-  .section-num { color: var(--cyan); }
-  .section-title { font-size: 14pt; }
-  .section-line { background: var(--border-bright); }
+  /* ─ EDUCATION TIMELINE ─ */
+  .timeline { padding-left: 12pt !important; }
+  .timeline::before { display: none !important; }
+  .timeline-dot { display: none !important; }
+  .timeline-item {
+    margin-bottom: 4pt !important;
+    padding: 5pt 8pt !important;
+    border-radius: 4pt !important;
+    background: #f4f4f8 !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+  }
+  .timeline-date { font-size: 6.5pt !important; color: #0066aa !important; margin-bottom: 1pt !important; }
+  .timeline-title { font-size: 8pt !important; color: #111122 !important; margin-bottom: 1pt !important; }
+  .timeline-sub { font-size: 7pt !important; color: #44445a !important; }
+  .tags-cloud { margin-top: 3pt !important; gap: 3pt !important; }
+  .tag {
+    padding: 1pt 6pt !important;
+    font-size: 6pt !important;
+    border-radius: 3pt !important;
+    background: rgba(0,102,170,0.08) !important;
+    border-color: rgba(0,102,170,0.2) !important;
+    color: #0066aa !important;
+  }
+  .tag.purple {
+    background: rgba(91,33,182,0.08) !important;
+    border-color: rgba(91,33,182,0.2) !important;
+    color: #5b21b6 !important;
+  }
 
-  .card, .timeline-item, .cert-item, .vol-item, .conf-item,
-  .achievement-card, .skill-item { opacity: 1 !important; transform: none !important; }
+  /* ─ CARDS (Experience & Research) ─ */
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4pt !important;
+  }
+  .card {
+    padding: 6pt 8pt !important;
+    border-radius: 5pt !important;
+    background: #f4f4f8 !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .card-icon { font-size: 0.85rem !important; margin-bottom: 3pt !important; }
+  .card-period { font-size: 6pt !important; color: #0066aa !important; margin-bottom: 1pt !important; }
+  .card-title { font-size: 7.5pt !important; color: #111122 !important; margin-bottom: 2pt !important; line-height: 1.3 !important; }
+  .card-body { font-size: 6.5pt !important; color: #44445a !important; line-height: 1.35 !important; }
+  .card-link { font-size: 6.5pt !important; margin-top: 3pt !important; color: #0066aa !important; }
 
-  .card { background: var(--card); border-color: var(--border); padding: 12pt; }
-  .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 10pt; }
-  .achievements-grid { grid-template-columns: repeat(4, 1fr); gap: 8pt; }
+  /* ─ SKILLS ─ */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4pt !important;
+  }
+  .skill-item {
+    padding: 5pt 8pt !important;
+    border-radius: 4pt !important;
+    background: #f4f4f8 !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+  }
+  .skill-header { margin-bottom: 4pt !important; }
+  .skill-name { font-size: 7.5pt !important; color: #111122 !important; }
+  .skill-level { font-size: 5.5pt !important; color: #555568 !important; }
+  .skill-bar { height: 3px !important; background: rgba(0,0,0,0.1) !important; border-radius: 3px; }
+  .skill-fill { background: linear-gradient(90deg, #0066aa, #5b21b6) !important; height: 100% !important; }
 
-  .tag { background: rgba(0,119,170,0.1); color: var(--cyan); border-color: rgba(0,119,170,0.3); }
-  .tag.purple { background: rgba(91,33,182,0.1); color: var(--purple); }
+  /* ─ CERTIFICATIONS ─ */
+  .certs-list { gap: 3pt !important; }
+  .cert-item {
+    padding: 4pt 8pt !important;
+    border-radius: 4pt !important;
+    background: #f4f4f8 !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    transform: none !important;
+  }
+  .cert-dot { background: #0066aa !important; box-shadow: none !important; width: 6px !important; height: 6px !important; }
+  .cert-name { font-size: 7.5pt !important; color: #111122 !important; }
+  .cert-year { font-size: 6.5pt !important; color: #555568 !important; }
 
-  .skill-bar { background: rgba(0,0,0,0.1); }
-  .skill-fill { background: var(--cyan) !important; }
+  /* ─ ACHIEVEMENTS ─ */
+  .achievements-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 4pt !important;
+  }
+  .achievement-card {
+    padding: 5pt 6pt !important;
+    border-radius: 5pt !important;
+    background: #f4f4f8 !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .achievement-medal { font-size: 1.1rem !important; margin-bottom: 3pt !important; }
+  .achievement-title { font-size: 6.5pt !important; color: #111122 !important; margin-bottom: 2pt !important; }
+  .achievement-year { font-size: 6pt !important; color: #0066aa !important; }
 
-  a { color: inherit; text-decoration: none; }
-  a[href]::after { content: none; }
+  /* ─ ACTIVITIES ─ */
+  .activities-row { gap: 4pt !important; }
+  .activity-chip {
+    padding: 2pt 7pt !important;
+    font-size: 7pt !important;
+    border-radius: 3pt !important;
+    background: #f4f4f8 !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    color: #44445a !important;
+    transform: none !important;
+  }
 
-  @page { margin: 14mm 16mm; size: A4; }
+  a { color: inherit !important; text-decoration: none !important; }
+  a[href]::after { content: none !important; }
 }
