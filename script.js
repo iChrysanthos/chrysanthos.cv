@@ -109,11 +109,30 @@ init();
 /* ════════════════════════════════════════
    PRINT PREPARATION
 ════════════════════════════════════════ */
+const EMOJI_RE = /[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/gu;
+const _printOriginals = new Map();
+
+function _stripEmoji(selector) {
+  document.querySelectorAll(selector).forEach(el => {
+    _printOriginals.set(el, el.textContent);
+    el.textContent = el.textContent.replace(EMOJI_RE, '').trim();
+  });
+}
+
+function _restoreEmoji() {
+  _printOriginals.forEach((text, el) => { el.textContent = text; });
+  _printOriginals.clear();
+}
+
 window.addEventListener('beforeprint', () => {
   document.querySelectorAll('.skill-fill').forEach(fill => {
     fill.style.width = (fill.dataset.width || 0) + '%';
   });
   const d = new Date();
   const opts = { year: 'numeric', month: 'long', day: 'numeric' };
-  document.getElementById('print-date').textContent = d.toLocaleDateString(currentLang === 'el' ? 'el-GR' : 'en-GB', opts);
+  document.getElementById('print-date').textContent =
+    d.toLocaleDateString(currentLang === 'el' ? 'el-GR' : 'en-GB', opts);
+  _stripEmoji('.skill-name, .activity-chip, .conf-badge');
 });
+
+window.addEventListener('afterprint', _restoreEmoji);
