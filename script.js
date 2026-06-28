@@ -113,4 +113,7 @@ window.addEventListener('beforeprint', () => {
   document.querySelectorAll('.skill-fill').forEach(fill => {
     fill.style.width = (fill.dataset.width || 0) + '%';
   });
+  const d = new Date();
+  const opts = { year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('print-date').textContent = d.toLocaleDateString(currentLang === 'el' ? 'el-GR' : 'en-GB', opts);
 });
