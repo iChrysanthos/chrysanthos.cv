@@ -358,7 +358,17 @@
     transition: none !important;
   }
 
-  @page { margin: 8mm 12mm; size: A4 portrait; }
+  @page {
+    margin: 8mm 12mm 12mm;
+    size: A4 portrait;
+
+    @bottom-right {
+      content: counter(page) " / " counter(pages);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      color: #555568;
+    }
+  }
 
   body {
     background: #fff !important;
@@ -381,12 +391,13 @@
     color: #555568;
   }
 
-  /* ─ HIDE decorative / nav / footer / big sections ─ */
+  /* ─ HIDE decorative / nav / footer / big sections / emojis ─ */
   nav, .pdf-btn, .lang-toggle,
   .hero-bg-grid, .hero-orb,
   .hero-subtitle, .hero-cursor, .hero-divider, .hero-desc,
   .section-divider, footer,
-  #conferences, #volunteering { display: none !important; }
+  #conferences, #volunteering,
+  .card-icon, .achievement-medal, .vol-icon { display: none !important; }
 
   /* ─ NAME on one line ─ */
   .name-br { display: none !important; }
