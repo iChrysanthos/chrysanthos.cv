@@ -43,7 +43,8 @@
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo { font-family: 'Bebas Neue'; font-size: 1.4rem; letter-spacing: 2px; color: var(--cyan); text-decoration: none; cursor: pointer; }
+  .nav-logo { text-decoration: none; cursor: pointer; display: flex; align-items: center; }
+  .nav-logo-img { height: 36px; width: auto; display: block; }
   .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
   .nav-links a {
     color: var(--muted2); text-decoration: none;
