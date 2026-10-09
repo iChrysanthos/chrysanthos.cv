@@ -93,9 +93,10 @@
   "act5": "🥋 Krav Maga",
   "act6": "📻 Radio Producer",
   "act7": "🚗 Driving License",
-  "vol1_title": "Member – New Technologies Club, CUT",
-  "vol1_sub": "Role: Social Media Manager",
-  "vol2_title": "Member – Board Games Club, CUT",
+  "vol1_title": "Member – New Technologies Club",
+  "vol1_sub": "CUT",
+  "vol2_title": "Member – Board Games Club",
+  "vol2_sub": "CUT",
   "vol3_title": "Volunteer – \"The Life and Contribution of Pythagoras to Mathematics, Sciences and Philosophy\"",
   "vol3_sub": "CUT",
   "vol4_title": "Volunteer – European Project \"Green Transitions\"",
@@ -125,5 +126,9 @@
   "conf10_meta": "26.11.2025 · CUT, Limassol",
   "conf11_title": "\"Every Talent Checks In\" – Hotel Inclusive Recruitment Education",
   "conf11_meta": "01.09.2026 · Pefkos Hotel, Limassol",
+  "conf12_title": "\"Create Your Own Social Enterprise!\"",
+  "conf12_meta": "03.10.2026 · Nicosia",
+  "conf13_title": "\"New Independent Living Services – New Career Opportunities – Prospects for Establishing Social Enterprises\"",
+  "conf13_meta": "07.10.2026 · OELMEK, Nicosia",
   "footer_text": "© 2026 Chrysanthos Spyrou · Limassol, Cyprus"
 }
