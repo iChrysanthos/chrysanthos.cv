@@ -54,6 +54,8 @@
   "proj3_date": "JUL — AUG 2026 · Browser Extension",
   "proj3_title": "TwoWay – Instagram Follow Audit",
   "proj3_body": "Chrome extension (Manifest V3) that compares the followers and following of your own Instagram account and shows who doesn't follow back. Everything runs and stays locally in the browser.",
+  "proj7_date": "NOV 2026 · NASA Space Apps Challenge · Team of 2",
+  "proj7_body": "Hackathon team app that turns NASA Earth images and videos into music, offering an accessible, audio-first way to hear how the planet is changing. I designed the system architecture (Python data pipeline, browser audio engine, accessible UI) and the team's work plan.",
   "proj6_date": "SPRING 2026 · MSc Course Project",
   "proj6_title": "Distributed Data Processing with Apache Spark",
   "proj6_body": "Implemented TPC-H Query 6 with PySpark (RDD API) on a distributed Docker cluster (Spark master/worker, HDFS name/data nodes) and benchmarked execution time across four dataset sizes and three query years.",

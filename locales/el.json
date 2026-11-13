@@ -54,6 +54,8 @@
   "proj3_date": "ΙΟΥΛ — ΑΥΓ 2026 · Browser Extension",
   "proj3_title": "TwoWay – Instagram Follow Audit",
   "proj3_body": "Chrome extension (Manifest V3) που συγκρίνει τους followers και τους following του δικού σου λογαριασμού Instagram και δείχνει ποιοι δεν σε ακολουθούν πίσω. Όλα τρέχουν και μένουν τοπικά στον browser.",
+  "proj7_date": "ΝΟΕ 2026 · NASA Space Apps Challenge · Ομάδα 2 ατόμων",
+  "proj7_body": "Εφαρμογή ομάδας για hackathon που μετατρέπει εικόνες και βίντεο της NASA για τη Γη σε μουσική, προσφέροντας έναν προσβάσιμο τρόπο να ακούς πώς αλλάζει ο πλανήτης. Σχεδίασα την αρχιτεκτονική του συστήματος (Python data pipeline, audio engine στον browser, προσβάσιμο UI) και το πλάνο εργασιών της ομάδας.",
   "proj6_date": "ΑΝΟΙΞΗ 2026 · Μεταπτυχιακό Project",
   "proj6_title": "Κατανεμημένη Επεξεργασία Δεδομένων με Apache Spark",
   "proj6_body": "Υλοποίηση του TPC-H Query 6 με PySpark (RDD API) σε κατανεμημένο cluster με Docker (Spark master/worker, HDFS name/data nodes) και μετρήσεις χρόνου εκτέλεσης σε τέσσερα μεγέθη δεδομένων και τρία έτη ερωτημάτων.",
