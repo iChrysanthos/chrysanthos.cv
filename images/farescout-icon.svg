@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs><linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a56c4"/><stop offset="1" stop-color="#13a6a3"/></linearGradient></defs>
+  <rect width="128" height="128" rx="28.25" fill="url(#sea)"/>
+  <polygon fill="#ffffff" points="102.5,25.5 19.75,60.5 55,71.5"/>
+  <polygon fill="#ffffff" points="102.5,25.5 73.5,104.75 61,84.5"/>
+  <polygon fill="#c8e2f0" points="102.5,25.5 55,71.5 59.25,89"/>
+</svg>

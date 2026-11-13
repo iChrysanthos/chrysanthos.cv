@@ -22,6 +22,7 @@
   <ul class="nav-links">
     <li class="nav-link-item"><a href="#education" data-i18n="nav_education">Education</a></li>
     <li class="nav-link-item"><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+    <li class="nav-link-item"><a href="#projects" data-i18n="nav_projects">Projects</a></li>
     <li class="nav-link-item"><a href="#research" data-i18n="nav_research">Research</a></li>
     <li class="nav-link-item"><a href="#skills" data-i18n="nav_skills">Skills</a></li>
     <li class="nav-link-item"><a href="#more" data-i18n="nav_more">More</a></li>
@@ -63,6 +64,10 @@
       <a class="contact-pill" href="mailto:chrysanthosgr@gmail.com">
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         chrysanthosgr@gmail.com
+      </a>
+      <a class="contact-pill" href="https://github.com/iChrysanthos" target="_blank">
+        <svg fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        github.com/iChrysanthos
       </a>
       <a class="contact-pill" href="#">
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -130,10 +135,11 @@
       <span class="card-icon">✈️</span>
       <div class="card-period" data-i18n="exp5_date">SEP 2026 — Present</div>
       <div class="card-title" data-i18n="exp5_title">Marketing & IT Operations Specialist – Opera Travel</div>
-      <div class="card-body" data-i18n="exp5_body">Management of digital marketing activities and support of the company's IT systems and day-to-day technical operations.</div>
+      <div class="card-body" data-i18n="exp5_body">Run the company's digital marketing and support its IT systems and day-to-day technical operations. Designed and built FareScout, the web app used by everyone in the office to find low-cost flights and create customer offers.</div>
       <div class="tags-cloud" style="margin-top:14px;">
         <span class="tag purple">Marketing</span>
         <span class="tag purple">IT Operations</span>
+        <span class="tag purple">Web App</span>
       </div>
     </div>
 
@@ -159,7 +165,7 @@
         <span class="tag purple">HTML / CSS</span>
       </div>
     </div>
-    <div class="card">
+    <div class="card no-pdf">
       <span class="card-icon">🌿</span>
       <div class="card-period" data-i18n="exp4_date">JUN 2022 — JUL 2022</div>
       <div class="card-title" data-i18n="exp4_title">Assistant Supervisor – Synthetic Grass</div>
@@ -170,14 +176,100 @@
 
 <div class="section-divider"></div>
 
+<!-- PROJECTS -->
+<div class="section-wrap" id="projects">
+  <div class="section-label">
+    <span class="section-num">03</span>
+    <h2 class="section-title" data-i18n="sec_projects">PROJECTS</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <img class="card-icon card-icon-img" src="images/farescout-icon.svg" alt="FareScout logo">
+      <div class="card-period" data-i18n="proj0_date">OCT 2026 — Present · Founder &amp; Developer</div>
+      <div class="card-title">FareScout</div>
+      <div class="card-body" data-i18n="proj0_body">Web app that finds the cheapest Ryanair and Wizz Air flights from Cyprus and turns them into ready-to-send offers for customers. Used by the whole Opera Travel office.</div>
+      <div class="tags-cloud" style="margin-top:14px;">
+        <span class="tag">JavaScript</span><span class="tag">Supabase</span>
+        <span class="tag">PostgreSQL</span><span class="tag">Cloudflare</span>
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">📈</span>
+      <div class="card-period" data-i18n="proj5_date">JUL — OCT 2026 · Algorithmic Trading</div>
+      <div class="card-title" data-i18n="proj5_title">Crypto Market-Making Bots</div>
+      <div class="card-body" data-i18n="proj5_body">Automated trading systems that extend my MSc thesis: a market-making bot that traded live on Revolut X with real capital (risk limits, kill-switch, alerts, live dashboard) and a Bybit platform that streams real order-book data and backtests strategies.</div>
+      <div class="tags-cloud" style="margin-top:14px;">
+        <span class="tag">Python</span><span class="tag">WebSocket</span>
+        <span class="tag">Linux / systemd</span><span class="tag">Pytest</span>
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">⚡</span>
+      <div class="card-period" data-i18n="proj6_date">SPRING 2026 · MSc Course Project</div>
+      <div class="card-title" data-i18n="proj6_title">Distributed Data Processing with Apache Spark</div>
+      <div class="card-body" data-i18n="proj6_body">Implemented TPC-H Query 6 with PySpark (RDD API) on a distributed Docker cluster (Spark master/worker, HDFS name/data nodes) and benchmarked execution time across four dataset sizes and three query years.</div>
+      <div class="tags-cloud" style="margin-top:14px;">
+        <span class="tag">PySpark</span><span class="tag">HDFS</span>
+        <span class="tag">Docker</span><span class="tag">Distributed Systems</span>
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-icon">💻</span>
+      <div class="card-period" data-i18n="proj1_date">DEC 2025 · AI / LLM</div>
+      <div class="card-title" data-i18n="proj1_title">AI Python Code Assistant</div>
+      <div class="card-body" data-i18n="proj1_body">Chatbot that writes and optimizes Python code with OpenAI GPT models. Uses RAG to pull the right specifications from a knowledge base and draws control-flow and data-flow graphs of the generated code.</div>
+      <div class="tags-cloud" style="margin-top:14px;">
+        <span class="tag">Python</span><span class="tag">OpenAI API</span>
+        <span class="tag">RAG</span><span class="tag">LLM</span>
+      </div>
+      <a class="card-link" href="https://github.com/iChrysanthos/GenerativeAI" target="_blank" data-i18n="proj_link">🔗 View on GitHub</a>
+    </div>
+    <div class="card">
+      <span class="card-icon">🛡️</span>
+      <div class="card-period" data-i18n="proj2_date">MAR — APR 2026 · AI / LLM</div>
+      <div class="card-title" data-i18n="proj2_title">LLM-as-a-Judge Toxicity Moderation</div>
+      <div class="card-body" data-i18n="proj2_body">Toxicity moderation with Gemma-2B as a zero-shot judge: strict JSON output, three decision methods (direct generation, log-likelihood scoring, self-consistency), abstention when unsure, and robustness tests against typo and leetspeak attacks.</div>
+      <div class="tags-cloud" style="margin-top:14px;">
+        <span class="tag">Python</span><span class="tag">Gemma</span>
+        <span class="tag">Hugging Face</span><span class="tag">LLM Evaluation</span>
+      </div>
+      <a class="card-link" href="https://github.com/iChrysanthos/llm-toxicity-moderation-gemma" target="_blank" data-i18n="proj_link">🔗 View on GitHub</a>
+    </div>
+    <div class="card">
+      <img class="card-icon card-icon-img" src="images/twoway-icon.png" alt="TwoWay logo">
+      <div class="card-period" data-i18n="proj3_date">JUL — AUG 2026 · Browser Extension</div>
+      <div class="card-title" data-i18n="proj3_title">TwoWay – Instagram Follow Audit</div>
+      <div class="card-body" data-i18n="proj3_body">Chrome extension (Manifest V3) that compares the followers and following of your own Instagram account and shows who doesn't follow back. Everything runs and stays locally in the browser.</div>
+      <div class="tags-cloud" style="margin-top:14px;">
+        <span class="tag">JavaScript</span><span class="tag">Chrome Extension</span>
+        <span class="tag">Manifest V3</span>
+      </div>
+      <a class="card-link" href="https://github.com/iChrysanthos/TwoWay" target="_blank" data-i18n="proj_link">🔗 View on GitHub</a>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
 <!-- RESEARCH -->
 <div class="section-wrap" id="research">
   <div class="section-label">
-    <span class="section-num">03</span>
+    <span class="section-num">04</span>
     <h2 class="section-title" data-i18n="sec_research">RESEARCH</h2>
     <div class="section-line"></div>
   </div>
   <div class="cards-grid">
+    <div class="card">
+      <span class="card-icon">📄</span>
+      <div class="card-period" data-i18n="res6_date">OCT 2026 — Present · Scientific Article (in preparation)</div>
+      <div class="card-title">Where Does Safety Come From? A Multi-Agent LLM Market Maker with Code-Enforced Validation</div>
+      <div class="card-body" data-i18n="res6_body">Studies where the safety of an LLM trading system comes from: five CrewAI agents with local 3–8B models (Ollama) quote BTCUSDT on real Bybit data, while code computes and validates every price. Ablations measure the role of each guardrail.</div>
+      <div class="tags-cloud" style="margin-top:14px;">
+        <span class="tag">CrewAI</span><span class="tag">Ollama</span>
+        <span class="tag">LLM Guardrails</span><span class="tag">Multi-Agent</span>
+      </div>
+    </div>
     <div class="card">
       <span class="card-icon">🤖</span>
       <div class="card-period" data-i18n="res1_date">MAY 2026 — Present · MSc Thesis</div>
@@ -205,7 +297,7 @@
       <div class="card-body" data-i18n="res3_body">Role: Research Associate, Department of Communication and Internet Studies, CUT. Website development for presentation and dissemination of research results. Digital content management.</div>
       <a class="card-link" href="https://cinevolosproject.cut.ac.cy/" target="_blank" data-i18n="res3_link">🔗 View the project</a>
     </div>
-    <div class="card">
+    <div class="card no-pdf">
       <span class="card-icon">📊</span>
       <div class="card-period" data-i18n="res4_date">Spring 2024 · Academic Research</div>
       <div class="card-title" data-i18n="res4_title">Differential Behavior of Male & Female Users on Social Media – MEPs</div>
@@ -215,7 +307,7 @@
         <span class="tag">Social Media</span>
       </div>
     </div>
-    <div class="card">
+    <div class="card no-pdf">
       <span class="card-icon">🎥</span>
       <div class="card-period" data-i18n="res5_date">SEP 2023 — DEC 2023 · Documentary</div>
       <div class="card-title" data-i18n="res5_title">Limassol Carnival</div>
@@ -230,7 +322,7 @@
 <!-- SKILLS -->
 <div class="section-wrap" id="skills">
   <div class="section-label">
-    <span class="section-num">04</span>
+    <span class="section-num">05</span>
     <h2 class="section-title" data-i18n="sec_skills">SKILLS</h2>
     <div class="section-line"></div>
   </div>
@@ -244,7 +336,7 @@
     </div>
     <div class="skill-item">
       <div class="skill-header">
-        <span class="skill-name" data-i18n="skill5">🌐 Web Dev (HTML/CSS/JS)</span>
+        <span class="skill-name" data-i18n="skill5">🌐 Web &amp; App Development</span>
         <span class="skill-level" data-i18n="level_expert">Expert</span>
       </div>
       <div class="skill-bar"><div class="skill-fill" data-width="98"></div></div>
@@ -299,8 +391,9 @@
       <div class="skill-bar"><div class="skill-fill" data-width="50"></div></div>
     </div>
   </div>
-  <div style="margin-top:44px;">
-    <p class="section-num" style="letter-spacing:1.5px;font-size:0.75rem;margin-bottom:16px;" data-i18n="skill_tools_title">AI &amp; DEV TOOLS</p>
+  <div class="skill-extras">
+  <div class="skill-sub">
+    <p class="section-num skill-sub-title" data-i18n="skill_tools_title">AI &amp; DEV TOOLS</p>
     <div class="tags-cloud">
       <span class="tag">Claude</span>
       <span class="tag">Claude Code</span>
@@ -308,19 +401,26 @@
       <span class="tag">Codex</span>
       <span class="tag">Gemini</span>
       <span class="tag">Grok</span>
+      <span class="tag">Canva AI</span>
       <span class="tag">Cursor</span>
       <span class="tag">GitHub Copilot</span>
       <span class="tag purple">Git</span>
       <span class="tag purple">GitHub</span>
       <span class="tag purple">VS Code</span>
+      <span class="tag purple">Docker</span>
+      <span class="tag purple">Apache Spark</span>
+      <span class="tag purple">Supabase</span>
+      <span class="tag purple">PostgreSQL</span>
+      <span class="tag purple">Cloudflare</span>
     </div>
   </div>
-  <div style="margin-top:44px;">
-    <p class="section-num" style="letter-spacing:1.5px;font-size:0.75rem;margin-bottom:16px;" data-i18n="skill_lang_title">LANGUAGES</p>
+  <div class="skill-sub">
+    <p class="section-num skill-sub-title" data-i18n="skill_lang_title">LANGUAGES</p>
     <div class="tags-cloud">
       <span class="tag" data-i18n="skill_greek">Greek — Native</span>
       <span class="tag purple" data-i18n="skill_english">English — Intermediate</span>
     </div>
+  </div>
   </div>
 </div>
 
@@ -329,7 +429,7 @@
 <!-- CERTIFICATIONS -->
 <div class="section-wrap" id="more">
   <div class="section-label">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <h2 class="section-title" data-i18n="sec_certs">CERTIFICATIONS</h2>
     <div class="section-line"></div>
   </div>
@@ -337,6 +437,11 @@
     <div class="cert-item">
       <div class="cert-dot"></div>
       <span class="cert-name" data-i18n="cert1">Practical Workshop – VERITAS-AI Project | EmpowerPath (EU Co-funded)</span>
+      <span class="cert-year">2026</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-dot"></div>
+      <span class="cert-name" data-i18n="cert5">Code in Place (CS106A) – Stanford University</span>
       <span class="cert-year">2026</span>
     </div>
     <div class="cert-item">
@@ -362,7 +467,7 @@
 <!-- ACHIEVEMENTS -->
 <div class="section-wrap">
   <div class="section-label">
-    <span class="section-num">06</span>
+    <span class="section-num">07</span>
     <h2 class="section-title" data-i18n="sec_achievements">ACHIEVEMENTS</h2>
     <div class="section-line"></div>
   </div>
@@ -395,7 +500,7 @@
 <!-- VOLUNTEERING & CLUBS -->
 <div class="section-wrap" id="volunteering">
   <div class="section-label">
-    <span class="section-num">07</span>
+    <span class="section-num">08</span>
     <h2 class="section-title" data-i18n="sec_volunteering">VOLUNTEERING & CLUBS</h2>
     <div class="section-line"></div>
   </div>
@@ -440,7 +545,7 @@
 <!-- CONFERENCES & SEMINARS -->
 <div class="section-wrap" id="conferences">
   <div class="section-label">
-    <span class="section-num">08</span>
+    <span class="section-num">09</span>
     <h2 class="section-title" data-i18n="sec_conferences">CONFERENCES & SEMINARS</h2>
     <div class="section-line"></div>
   </div>
@@ -544,7 +649,7 @@
 <!-- ACTIVITIES -->
 <div class="section-wrap">
   <div class="section-label">
-    <span class="section-num">09</span>
+    <span class="section-num">10</span>
     <h2 class="section-title" data-i18n="sec_activities">ACTIVITIES</h2>
     <div class="section-line"></div>
   </div>
