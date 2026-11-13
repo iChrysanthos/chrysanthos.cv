@@ -471,6 +471,17 @@
     transform: none !important;
   }
 
+  /* never split a card across two pages: if it does not fit, it moves whole to the next page */
+  .timeline-item, .card, .achievement-card, .cert-item, .vol-item, .conf-item {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  /* a section title stays with what follows it */
+  .section-label {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
   /* ─ EDUCATION TIMELINE ─ */
   .timeline { padding-left: 12pt !important; }
   .timeline::before { display: none !important; }
