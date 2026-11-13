@@ -75,7 +75,7 @@
   .lang-sep { width: 1px; height: 100%; background: var(--border-bright); }
 
   /* ── PRINT HEADER (hidden on screen) ── */
-  #print-header { display: none; }
+  #print-header, #print-end-link { display: none; }
 
   /* ── PDF BUTTON ── */
   .pdf-btn {
@@ -382,10 +382,10 @@
   }
   body::before { display: none !important; }
 
-  /* ─ PRINT HEADER (date right-aligned) ─ */
+  /* ─ PRINT HEADER (link to full CV left, date right) ─ */
   #print-header {
     display: flex !important;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding-bottom: 4pt;
     border-bottom: 1px solid rgba(0,0,0,0.15);
@@ -394,6 +394,19 @@
     font-size: 7pt;
     color: #555568;
   }
+  #print-cv-link { color: #0066aa !important; text-decoration: none; }
+
+  /* ─ PRINT END LINK (after Activities) ─ */
+  #print-end-link {
+    display: block !important;
+    margin-top: 6pt;
+    padding-top: 4pt;
+    border-top: 1px solid rgba(0,0,0,0.15);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: #555568;
+  }
+  #print-end-link a { color: #0066aa !important; text-decoration: none; }
 
   /* ─ HIDE decorative / nav / footer / big sections / emojis ─ */
   nav, .pdf-btn, .lang-toggle,
